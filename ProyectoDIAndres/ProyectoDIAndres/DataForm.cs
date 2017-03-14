@@ -21,6 +21,7 @@ namespace ProyectoDIAndres {
                 imgFile = ofd.FileName;
                 pbImage.SizeMode = PictureBoxSizeMode.StretchImage;
                 pbImage.Image = Bitmap.FromFile(imgFile);
+                lblDimens.Visible = false;
             }
         }
 
@@ -34,12 +35,11 @@ namespace ProyectoDIAndres {
 
             int row = Properties.Settings.Default.row;
             int column = Properties.Settings.Default.column;
-            MessageBox.Show(column.ToString());
 
             frm1.panelFondo.Controls.Add(dn, column, row);
 
             column = column++;
-            if (column == 5) {
+            if (column == 3) {
                 row = row++;
                 column = 0;
             }
@@ -47,9 +47,7 @@ namespace ProyectoDIAndres {
             Properties.Settings.Default.column = column;
             Properties.Settings.Default.row = row;
             Properties.Settings.Default.Save();
-
-
-            //frm1.panelFondo.Controls.Add(dn);
+            
             this.Dispose();
         }
 

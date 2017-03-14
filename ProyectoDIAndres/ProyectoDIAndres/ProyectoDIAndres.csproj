@@ -94,6 +94,24 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus-box.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus-box%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete-sweep.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\redo-variant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\undo-variant.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

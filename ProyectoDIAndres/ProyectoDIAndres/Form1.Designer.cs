@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miNew = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,8 +40,14 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.herlpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsBtnNew = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnDelAll = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnDel = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnUndo = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnRedo = new System.Windows.Forms.ToolStripButton();
             this.panelFondo = new System.Windows.Forms.TableLayoutPanel();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -59,7 +64,7 @@
             this.herlpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(692, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(708, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -134,47 +139,100 @@
             // 
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1});
+            this.tsBtnNew,
+            this.tsBtnDelAll,
+            this.tsBtnDel,
+            this.toolStripSeparator1,
+            this.tsBtnUndo,
+            this.tsBtnRedo,
+            this.toolStripSeparator2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(692, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(708, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripButton1
+            // toolStripSeparator1
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // tsBtnNew
+            // 
+            this.tsBtnNew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsBtnNew.Image = global::ProyectoDIAndres.Properties.Resources.plus_box_1_;
+            this.tsBtnNew.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnNew.Name = "tsBtnNew";
+            this.tsBtnNew.Size = new System.Drawing.Size(23, 22);
+            this.tsBtnNew.Text = "toolStripButton1";
+            this.tsBtnNew.Click += new System.EventHandler(this.tsBtnNew_Click);
+            // 
+            // tsBtnDelAll
+            // 
+            this.tsBtnDelAll.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsBtnDelAll.Image = global::ProyectoDIAndres.Properties.Resources.delete_sweep;
+            this.tsBtnDelAll.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnDelAll.Name = "tsBtnDelAll";
+            this.tsBtnDelAll.Size = new System.Drawing.Size(23, 22);
+            this.tsBtnDelAll.Text = "toolStripButton1";
+            // 
+            // tsBtnDel
+            // 
+            this.tsBtnDel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsBtnDel.Image = global::ProyectoDIAndres.Properties.Resources.delete;
+            this.tsBtnDel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnDel.Name = "tsBtnDel";
+            this.tsBtnDel.Size = new System.Drawing.Size(23, 22);
+            this.tsBtnDel.Text = "toolStripButton1";
+            // 
+            // tsBtnUndo
+            // 
+            this.tsBtnUndo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsBtnUndo.Image = global::ProyectoDIAndres.Properties.Resources.undo_variant;
+            this.tsBtnUndo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnUndo.Name = "tsBtnUndo";
+            this.tsBtnUndo.Size = new System.Drawing.Size(23, 22);
+            this.tsBtnUndo.Text = "toolStripButton2";
+            // 
+            // tsBtnRedo
+            // 
+            this.tsBtnRedo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsBtnRedo.Image = global::ProyectoDIAndres.Properties.Resources.redo_variant;
+            this.tsBtnRedo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnRedo.Name = "tsBtnRedo";
+            this.tsBtnRedo.Size = new System.Drawing.Size(23, 22);
+            this.tsBtnRedo.Text = "toolStripButton3";
             // 
             // panelFondo
             // 
             this.panelFondo.ColumnCount = 4;
-            this.panelFondo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.panelFondo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.panelFondo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.panelFondo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.panelFondo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelFondo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 177F));
+            this.panelFondo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 177F));
+            this.panelFondo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 177F));
+            this.panelFondo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 177F));
             this.panelFondo.Location = new System.Drawing.Point(0, 49);
             this.panelFondo.Name = "panelFondo";
             this.panelFondo.RowCount = 2;
-            this.panelFondo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelFondo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelFondo.Size = new System.Drawing.Size(692, 378);
+            this.panelFondo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 218F));
+            this.panelFondo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 218F));
+            this.panelFondo.Size = new System.Drawing.Size(708, 436);
             this.panelFondo.TabIndex = 2;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(692, 427);
+            this.ClientSize = new System.Drawing.Size(708, 485);
             this.Controls.Add(this.panelFondo);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.MinimumSize = new System.Drawing.Size(724, 524);
             this.Name = "Form1";
             this.Text = "Form1";
             this.menuStrip1.ResumeLayout(false);
@@ -196,12 +254,18 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem herlpToolStripMenuItem;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton tsBtnNew;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.ToolStripMenuItem miIcon;
         private System.Windows.Forms.ToolStripMenuItem miList;
         private System.Windows.Forms.ToolStripMenuItem miIconList;
         private System.Windows.Forms.ToolStripMenuItem miNew;
+        private System.Windows.Forms.ToolStripButton tsBtnDelAll;
+        private System.Windows.Forms.ToolStripButton tsBtnDel;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton tsBtnUndo;
+        private System.Windows.Forms.ToolStripButton tsBtnRedo;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         public System.Windows.Forms.TableLayoutPanel panelFondo;
     }
 }

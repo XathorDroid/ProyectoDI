@@ -13,5 +13,9 @@ namespace ProyectoDIAndres {
             frm.Show();
         }
 
+        private void tsBtnNew_Click(object sender, System.EventArgs e) {
+            DataForm frm = new DataForm(this);
+            frm.Show();
+        }
     }
 }
