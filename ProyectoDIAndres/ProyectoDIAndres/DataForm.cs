@@ -36,7 +36,8 @@ namespace ProyectoDIAndres {
             int row = Properties.Settings.Default.row;
             int column = Properties.Settings.Default.column;
 
-            frm1.panelFondo.Controls.Add(dn, column, row);
+            //frm1.panelFondo.Controls.Add(dn, column, row);
+            frm1.lvItems.Items.Add(txtTitle.Text, imgFile);
 
             column = column++;
             if (column == 3) {

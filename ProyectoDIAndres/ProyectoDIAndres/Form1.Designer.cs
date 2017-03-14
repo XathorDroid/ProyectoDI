@@ -32,7 +32,7 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miNew = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.miView = new System.Windows.Forms.ToolStripMenuItem();
             this.miIcon = new System.Windows.Forms.ToolStripMenuItem();
             this.miList = new System.Windows.Forms.ToolStripMenuItem();
             this.miIconList = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,15 +40,19 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.herlpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsBtnNew = new System.Windows.Forms.ToolStripButton();
             this.tsBtnDelAll = new System.Windows.Forms.ToolStripButton();
             this.tsBtnDel = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsBtnUndo = new System.Windows.Forms.ToolStripButton();
             this.tsBtnRedo = new System.Windows.Forms.ToolStripButton();
-            this.panelFondo = new System.Windows.Forms.TableLayoutPanel();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsBtnView = new System.Windows.Forms.ToolStripSplitButton();
+            this.tsMiIcon = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsMiList = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsMiIconList = new System.Windows.Forms.ToolStripMenuItem();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.lvItems = new System.Windows.Forms.ListView();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -58,7 +62,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.editToolStripMenuItem,
-            this.viewToolStripMenuItem,
+            this.miView,
             this.toolsToolStripMenuItem,
             this.helpToolStripMenuItem,
             this.herlpToolStripMenuItem});
@@ -89,33 +93,38 @@
             this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "Edit";
             // 
-            // viewToolStripMenuItem
+            // miView
             // 
-            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.miView.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.miIcon,
             this.miList,
             this.miIconList});
-            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.viewToolStripMenuItem.Text = "View";
+            this.miView.Name = "miView";
+            this.miView.Size = new System.Drawing.Size(44, 20);
+            this.miView.Text = "View";
             // 
             // miIcon
             // 
+            this.miIcon.Checked = true;
+            this.miIcon.CheckState = System.Windows.Forms.CheckState.Checked;
             this.miIcon.Name = "miIcon";
-            this.miIcon.Size = new System.Drawing.Size(123, 22);
+            this.miIcon.Size = new System.Drawing.Size(152, 22);
             this.miIcon.Text = "Icons";
+            this.miIcon.Click += new System.EventHandler(this.miIcon_Click);
             // 
             // miList
             // 
             this.miList.Name = "miList";
-            this.miList.Size = new System.Drawing.Size(123, 22);
+            this.miList.Size = new System.Drawing.Size(152, 22);
             this.miList.Text = "List";
+            this.miList.Click += new System.EventHandler(this.miList_Click);
             // 
             // miIconList
             // 
             this.miIconList.Name = "miIconList";
-            this.miIconList.Size = new System.Drawing.Size(123, 22);
+            this.miIconList.Size = new System.Drawing.Size(152, 22);
             this.miIconList.Text = "Icons List";
+            this.miIconList.Click += new System.EventHandler(this.miIconList_Click);
             // 
             // toolsToolStripMenuItem
             // 
@@ -145,22 +154,13 @@
             this.toolStripSeparator1,
             this.tsBtnUndo,
             this.tsBtnRedo,
-            this.toolStripSeparator2});
+            this.toolStripSeparator2,
+            this.tsBtnView});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(708, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // tsBtnNew
             // 
@@ -190,6 +190,11 @@
             this.tsBtnDel.Size = new System.Drawing.Size(23, 22);
             this.tsBtnDel.Text = "toolStripButton1";
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
             // tsBtnUndo
             // 
             this.tsBtnUndo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -208,27 +213,62 @@
             this.tsBtnRedo.Size = new System.Drawing.Size(23, 22);
             this.tsBtnRedo.Text = "toolStripButton3";
             // 
-            // panelFondo
+            // toolStripSeparator2
             // 
-            this.panelFondo.ColumnCount = 4;
-            this.panelFondo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 177F));
-            this.panelFondo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 177F));
-            this.panelFondo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 177F));
-            this.panelFondo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 177F));
-            this.panelFondo.Location = new System.Drawing.Point(0, 49);
-            this.panelFondo.Name = "panelFondo";
-            this.panelFondo.RowCount = 2;
-            this.panelFondo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 218F));
-            this.panelFondo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 218F));
-            this.panelFondo.Size = new System.Drawing.Size(708, 436);
-            this.panelFondo.TabIndex = 2;
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // tsBtnView
+            // 
+            this.tsBtnView.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsBtnView.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsMiIcon,
+            this.tsMiList,
+            this.tsMiIconList});
+            this.tsBtnView.Image = global::ProyectoDIAndres.Properties.Resources.view_list;
+            this.tsBtnView.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnView.Name = "tsBtnView";
+            this.tsBtnView.Size = new System.Drawing.Size(32, 22);
+            this.tsBtnView.Text = "toolStripSplitButton1";
+            // 
+            // tsMiIcon
+            // 
+            this.tsMiIcon.Checked = true;
+            this.tsMiIcon.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.tsMiIcon.Name = "tsMiIcon";
+            this.tsMiIcon.Size = new System.Drawing.Size(152, 22);
+            this.tsMiIcon.Text = "Icons";
+            this.tsMiIcon.Click += new System.EventHandler(this.miIcon_Click);
+            // 
+            // tsMiList
+            // 
+            this.tsMiList.Name = "tsMiList";
+            this.tsMiList.Size = new System.Drawing.Size(152, 22);
+            this.tsMiList.Text = "List";
+            this.tsMiList.Click += new System.EventHandler(this.miList_Click);
+            // 
+            // tsMiIconList
+            // 
+            this.tsMiIconList.Name = "tsMiIconList";
+            this.tsMiIconList.Size = new System.Drawing.Size(152, 22);
+            this.tsMiIconList.Text = "Icons - List";
+            this.tsMiIconList.Click += new System.EventHandler(this.miIconList_Click);
+            // 
+            // lvItems
+            // 
+            this.lvItems.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvItems.Location = new System.Drawing.Point(0, 49);
+            this.lvItems.Name = "lvItems";
+            this.lvItems.Size = new System.Drawing.Size(708, 436);
+            this.lvItems.TabIndex = 2;
+            this.lvItems.UseCompatibleStateImageBehavior = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(708, 485);
-            this.Controls.Add(this.panelFondo);
+            this.Controls.Add(this.lvItems);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -249,7 +289,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem miView;
         private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem herlpToolStripMenuItem;
@@ -266,7 +306,11 @@
         private System.Windows.Forms.ToolStripButton tsBtnUndo;
         private System.Windows.Forms.ToolStripButton tsBtnRedo;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        public System.Windows.Forms.TableLayoutPanel panelFondo;
+        public System.Windows.Forms.ListView lvItems;
+        private System.Windows.Forms.ToolStripSplitButton tsBtnView;
+        private System.Windows.Forms.ToolStripMenuItem tsMiIcon;
+        private System.Windows.Forms.ToolStripMenuItem tsMiList;
+        private System.Windows.Forms.ToolStripMenuItem tsMiIconList;
     }
 }
 
