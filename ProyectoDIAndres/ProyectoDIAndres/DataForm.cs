@@ -7,7 +7,7 @@ namespace ProyectoDIAndres {
 
     public partial class DataForm : Form {
 
-        private String imgFile;
+        private Image image;
         private Form1 frm1;
 
         public DataForm(Form1 frm1Send) {
@@ -18,9 +18,10 @@ namespace ProyectoDIAndres {
         private void btnBrowse_Click(object sender, EventArgs e) {
             OpenFileDialog ofd = new OpenFileDialog();
             if (ofd.ShowDialog() == DialogResult.OK) {
-                imgFile = ofd.FileName;
+                String imgFile = ofd.FileName;
+                image = Bitmap.FromFile(imgFile);
                 pbImage.SizeMode = PictureBoxSizeMode.StretchImage;
-                pbImage.Image = Bitmap.FromFile(imgFile);
+                pbImage.Image = image;
                 lblDimens.Visible = false;
             }
         }
@@ -30,25 +31,30 @@ namespace ProyectoDIAndres {
         }
 
         private void btnOk_Click(object sender, EventArgs e) {
-            DatosNormal dn = new DatosNormal();
-            dn.loadDatas(imgFile, txtTitle.Text);
-
-            int row = Properties.Settings.Default.row;
-            int column = Properties.Settings.Default.column;
+            //int row = Properties.Settings.Default.row;
+            int count = Properties.Settings.Default.count;
+            
+            String title = txtTitle.Text;
 
             //frm1.panelFondo.Controls.Add(dn, column, row);
-            frm1.lvItems.Items.Add(txtTitle.Text, imgFile);
+            frm1.imgCollection.Images.Add(title, image);
 
-            column = column++;
-            if (column == 3) {
-                row = row++;
-                column = 0;
-            }
+            Graphics theGraphics = Graphics.FromHwnd(this.Handle);
+            frm1.imgCollection.Draw(theGraphics, new Point(120, 120), count);
 
-            Properties.Settings.Default.column = column;
-            Properties.Settings.Default.row = row;
+            frm1.lvItems.LargeImageList = frm1.imgCollection;
+            frm1.lvItems.Items.Add(title, count);
+
+            //column = column++;
+            //if (column == 3) {
+            //    row = row++;
+            //    column = 0;
+            //}
+
+            Properties.Settings.Default.count = count++;
+            //Properties.Settings.Default.row = row;
             Properties.Settings.Default.Save();
-            
+
             this.Dispose();
         }
 

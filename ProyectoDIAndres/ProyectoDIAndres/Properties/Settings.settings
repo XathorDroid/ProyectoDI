@@ -5,7 +5,7 @@
     <Setting Name="row" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="column" Type="System.Int32" Scope="User">
+    <Setting Name="count" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
   </Settings>

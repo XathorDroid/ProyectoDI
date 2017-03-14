@@ -38,12 +38,12 @@ namespace ProyectoDIAndres.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int column {
+        public int count {
             get {
-                return ((int)(this["column"]));
+                return ((int)(this["count"]));
             }
             set {
-                this["column"] = value;
+                this["count"] = value;
             }
         }
     }

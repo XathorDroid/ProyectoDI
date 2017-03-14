@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miNew = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,6 +54,7 @@
             this.tsMiIconList = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.lvItems = new System.Windows.Forms.ListView();
+            this.imgCollection = new System.Windows.Forms.ImageList(this.components);
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -263,6 +265,12 @@
             this.lvItems.TabIndex = 2;
             this.lvItems.UseCompatibleStateImageBehavior = false;
             // 
+            // imgCollection
+            // 
+            this.imgCollection.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imgCollection.ImageSize = new System.Drawing.Size(16, 16);
+            this.imgCollection.TransparentColor = System.Drawing.Color.Transparent;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -311,6 +319,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsMiIcon;
         private System.Windows.Forms.ToolStripMenuItem tsMiList;
         private System.Windows.Forms.ToolStripMenuItem tsMiIconList;
+        public System.Windows.Forms.ImageList imgCollection;
     }
 }
 
