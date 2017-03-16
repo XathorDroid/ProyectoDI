@@ -7,7 +7,7 @@ namespace ProyectoDIAndres {
 
     public partial class DataForm : Form {
 
-        private Image image;
+        String imgFile;
         private Form1 frm1;
 
         public DataForm(Form1 frm1Send) {
@@ -18,10 +18,9 @@ namespace ProyectoDIAndres {
         private void btnBrowse_Click(object sender, EventArgs e) {
             OpenFileDialog ofd = new OpenFileDialog();
             if (ofd.ShowDialog() == DialogResult.OK) {
-                String imgFile = ofd.FileName;
-                image = Bitmap.FromFile(imgFile);
+                imgFile = ofd.FileName;
                 pbImage.SizeMode = PictureBoxSizeMode.StretchImage;
-                pbImage.Image = image;
+                pbImage.Image = Bitmap.FromFile(imgFile);
                 lblDimens.Visible = false;
             }
         }
@@ -33,11 +32,13 @@ namespace ProyectoDIAndres {
         private void btnOk_Click(object sender, EventArgs e) {
             //int row = Properties.Settings.Default.row;
             int count = Properties.Settings.Default.count;
+
+            DatosNormal dn = new DatosNormal();
+            dn.loadDatas(imgFile, txtTitle.Text);
             
             String title = txtTitle.Text;
 
             //frm1.panelFondo.Controls.Add(dn, column, row);
-            frm1.imgCollection.Images.Add(title, image);
 
             Graphics theGraphics = Graphics.FromHwnd(this.Handle);
             frm1.imgCollection.Draw(theGraphics, new Point(120, 120), count);

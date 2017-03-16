@@ -53,8 +53,8 @@
             this.tsMiList = new System.Windows.Forms.ToolStripMenuItem();
             this.tsMiIconList = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.lvItems = new System.Windows.Forms.ListView();
             this.imgCollection = new System.Windows.Forms.ImageList(this.components);
+            this.panelFondo = new System.Windows.Forms.FlowLayoutPanel();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -110,21 +110,21 @@
             this.miIcon.Checked = true;
             this.miIcon.CheckState = System.Windows.Forms.CheckState.Checked;
             this.miIcon.Name = "miIcon";
-            this.miIcon.Size = new System.Drawing.Size(152, 22);
+            this.miIcon.Size = new System.Drawing.Size(123, 22);
             this.miIcon.Text = "Icons";
             this.miIcon.Click += new System.EventHandler(this.miIcon_Click);
             // 
             // miList
             // 
             this.miList.Name = "miList";
-            this.miList.Size = new System.Drawing.Size(152, 22);
+            this.miList.Size = new System.Drawing.Size(123, 22);
             this.miList.Text = "List";
             this.miList.Click += new System.EventHandler(this.miList_Click);
             // 
             // miIconList
             // 
             this.miIconList.Name = "miIconList";
-            this.miIconList.Size = new System.Drawing.Size(152, 22);
+            this.miIconList.Size = new System.Drawing.Size(123, 22);
             this.miIconList.Text = "Icons List";
             this.miIconList.Click += new System.EventHandler(this.miIconList_Click);
             // 
@@ -238,32 +238,23 @@
             this.tsMiIcon.Checked = true;
             this.tsMiIcon.CheckState = System.Windows.Forms.CheckState.Checked;
             this.tsMiIcon.Name = "tsMiIcon";
-            this.tsMiIcon.Size = new System.Drawing.Size(152, 22);
+            this.tsMiIcon.Size = new System.Drawing.Size(131, 22);
             this.tsMiIcon.Text = "Icons";
             this.tsMiIcon.Click += new System.EventHandler(this.miIcon_Click);
             // 
             // tsMiList
             // 
             this.tsMiList.Name = "tsMiList";
-            this.tsMiList.Size = new System.Drawing.Size(152, 22);
+            this.tsMiList.Size = new System.Drawing.Size(131, 22);
             this.tsMiList.Text = "List";
             this.tsMiList.Click += new System.EventHandler(this.miList_Click);
             // 
             // tsMiIconList
             // 
             this.tsMiIconList.Name = "tsMiIconList";
-            this.tsMiIconList.Size = new System.Drawing.Size(152, 22);
+            this.tsMiIconList.Size = new System.Drawing.Size(131, 22);
             this.tsMiIconList.Text = "Icons - List";
             this.tsMiIconList.Click += new System.EventHandler(this.miIconList_Click);
-            // 
-            // lvItems
-            // 
-            this.lvItems.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvItems.Location = new System.Drawing.Point(0, 49);
-            this.lvItems.Name = "lvItems";
-            this.lvItems.Size = new System.Drawing.Size(708, 436);
-            this.lvItems.TabIndex = 2;
-            this.lvItems.UseCompatibleStateImageBehavior = false;
             // 
             // imgCollection
             // 
@@ -271,12 +262,20 @@
             this.imgCollection.ImageSize = new System.Drawing.Size(16, 16);
             this.imgCollection.TransparentColor = System.Drawing.Color.Transparent;
             // 
+            // panelFondo
+            // 
+            this.panelFondo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelFondo.Location = new System.Drawing.Point(0, 49);
+            this.panelFondo.Name = "panelFondo";
+            this.panelFondo.Size = new System.Drawing.Size(708, 436);
+            this.panelFondo.TabIndex = 2;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(708, 485);
-            this.Controls.Add(this.lvItems);
+            this.Controls.Add(this.panelFondo);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -314,12 +313,12 @@
         private System.Windows.Forms.ToolStripButton tsBtnUndo;
         private System.Windows.Forms.ToolStripButton tsBtnRedo;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        public System.Windows.Forms.ListView lvItems;
         private System.Windows.Forms.ToolStripSplitButton tsBtnView;
         private System.Windows.Forms.ToolStripMenuItem tsMiIcon;
         private System.Windows.Forms.ToolStripMenuItem tsMiList;
         private System.Windows.Forms.ToolStripMenuItem tsMiIconList;
         public System.Windows.Forms.ImageList imgCollection;
+        public System.Windows.Forms.FlowLayoutPanel panelFondo;
     }
 }
 
