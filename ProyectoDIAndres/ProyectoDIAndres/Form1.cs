@@ -1,13 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Forms;
+using ControlDatos;
 
 namespace ProyectoDIAndres {
 
     public partial class Form1 : Form {
 
         public byte viewSelect;
-        private List<ControlDatos.DatosNormal> listaDn;
-        private List<ControlDatos.DatosListaImagen> listaDli;
+        private List<ControlDatos.DatosNormal> listaDn = new List<DatosNormal>();
+        private List<ControlDatos.DatosListaImagen> listaDli = new List<DatosListaImagen>();
         
         public Form1() {
             InitializeComponent();
@@ -30,15 +31,18 @@ namespace ProyectoDIAndres {
             viewSelect = 1;
 
             listaDn.Clear();
-            foreach (Control c in panelFondo.Controls)
+            panelFondo.Controls.Clear();
+            foreach (DatosListaImagen c in panelFondo.Controls)
             {
-                listaDli.Add((ControlDatos.DatosListaImagen)c);
+                listaDli.Add(c);
             }
 
             panelFondo.FlowDirection = FlowDirection.LeftToRight;
-            foreach (ControlDatos.DatosNormal c in listaDn)
+            foreach (DatosListaImagen c in listaDli)
             {
-                ControlDatos.DatosNormal dn = new ControlDatos.DatosNormal();
+                DatosNormal dn = new DatosNormal();
+                dn.setDatas(c.getImageFile(), c.getTitle());
+                panelFondo.Controls.Add(dn);
             }
         }
 
@@ -50,11 +54,12 @@ namespace ProyectoDIAndres {
             viewSelect = 2;
             panelFondo.FlowDirection = FlowDirection.TopDown;
 
-            listaDli.Clear();
-            foreach (Control c in panelFondo.Controls)
-            {
-                listaDn.Add((ControlDatos.DatosNormal)c);
-            }
+            //listaDli.Clear();
+            //foreach (Control c in panelFondo.Controls)
+            //{
+            //    listaDn.Add((ControlDatos.DatosNormal)c);
+            //}
         }
+        
     }
 }

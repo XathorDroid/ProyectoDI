@@ -108,14 +108,14 @@
             this.miIcon.Checked = true;
             this.miIcon.CheckState = System.Windows.Forms.CheckState.Checked;
             this.miIcon.Name = "miIcon";
-            this.miIcon.Size = new System.Drawing.Size(152, 22);
+            this.miIcon.Size = new System.Drawing.Size(123, 22);
             this.miIcon.Text = "Icons";
             this.miIcon.Click += new System.EventHandler(this.miIcon_Click);
             // 
             // miIconList
             // 
             this.miIconList.Name = "miIconList";
-            this.miIconList.Size = new System.Drawing.Size(152, 22);
+            this.miIconList.Size = new System.Drawing.Size(123, 22);
             this.miIconList.Text = "Icons List";
             this.miIconList.Click += new System.EventHandler(this.miIconList_Click);
             // 
@@ -234,14 +234,14 @@
             this.tsMiIcon.Checked = true;
             this.tsMiIcon.CheckState = System.Windows.Forms.CheckState.Checked;
             this.tsMiIcon.Name = "tsMiIcon";
-            this.tsMiIcon.Size = new System.Drawing.Size(152, 22);
+            this.tsMiIcon.Size = new System.Drawing.Size(131, 22);
             this.tsMiIcon.Text = "Icons";
             this.tsMiIcon.Click += new System.EventHandler(this.miIcon_Click);
             // 
             // tsMiIconList
             // 
             this.tsMiIconList.Name = "tsMiIconList";
-            this.tsMiIconList.Size = new System.Drawing.Size(152, 22);
+            this.tsMiIconList.Size = new System.Drawing.Size(131, 22);
             this.tsMiIconList.Text = "Icons - List";
             this.tsMiIconList.Click += new System.EventHandler(this.miIconList_Click);
             // 

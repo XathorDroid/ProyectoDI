@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ControlDatos">
-      <HintPath>..\..\ControlDatos\ControlDatos\obj\Debug\ControlDatos.dll</HintPath>
+      <HintPath>..\..\..\ControlDatosVS\ControlDatos\ControlDatos\bin\Debug\ControlDatos.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

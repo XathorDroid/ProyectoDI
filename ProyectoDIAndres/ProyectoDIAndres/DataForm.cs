@@ -1,5 +1,5 @@
-﻿using System;
-using ControlDatos;
+﻿using ControlDatos;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -34,12 +34,13 @@ namespace ProyectoDIAndres {
         private void btnOk_Click(object sender, EventArgs e) {
             if (viewSelect == 1) {
                 DatosNormal dn = new DatosNormal();
+                dn.setDatas(imgFile, txtTitle.Text);
 
                 //frm1.panelFondo.FlowDirection = FlowDirection.LeftToRight;
                 frm1.panelFondo.Controls.Add(dn);
             } else if(viewSelect == 2) {
                 DatosListaImagen dli = new DatosListaImagen();
-                dli.loadDatas(imgFile, txtTitle.Text);
+                dli.setDatas(imgFile, txtTitle.Text);
                 dli.BorderStyle = BorderStyle.FixedSingle;
 
                 //frm1.panelFondo.FlowDirection = FlowDirection.TopDown;
