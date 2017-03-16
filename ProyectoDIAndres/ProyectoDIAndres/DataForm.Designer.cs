@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.txtTitle = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblImage = new System.Windows.Forms.Label();
             this.btnBrowse = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -58,15 +58,15 @@
             this.txtTitle.Size = new System.Drawing.Size(257, 20);
             this.txtTitle.TabIndex = 1;
             // 
-            // label2
+            // lblImage
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 86);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 16);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Image";
+            this.lblImage.AutoSize = true;
+            this.lblImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblImage.Location = new System.Drawing.Point(12, 86);
+            this.lblImage.Name = "lblImage";
+            this.lblImage.Size = new System.Drawing.Size(51, 16);
+            this.lblImage.TabIndex = 2;
+            this.lblImage.Text = "Image";
             // 
             // btnBrowse
             // 
@@ -80,6 +80,7 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.Controls.Add(this.btnCancel);
             this.panel1.Controls.Add(this.btnOk);
             this.panel1.Location = new System.Drawing.Point(15, 239);
@@ -136,7 +137,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pbImage);
             this.Controls.Add(this.btnBrowse);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblImage);
             this.Controls.Add(this.txtTitle);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -156,12 +157,12 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtTitle;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnBrowse;
-        private System.Windows.Forms.PictureBox pbImage;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnOk;
-        private System.Windows.Forms.Label lblDimens;
+        public System.Windows.Forms.Label lblImage;
+        public System.Windows.Forms.Button btnBrowse;
+        public System.Windows.Forms.PictureBox pbImage;
+        public System.Windows.Forms.Label lblDimens;
     }
 }

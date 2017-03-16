@@ -35,13 +35,13 @@
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miView = new System.Windows.Forms.ToolStripMenuItem();
             this.miIcon = new System.Windows.Forms.ToolStripMenuItem();
-            this.miList = new System.Windows.Forms.ToolStripMenuItem();
             this.miIconList = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.herlpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsBtnNew = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.tsBtnDelAll = new System.Windows.Forms.ToolStripButton();
             this.tsBtnDel = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -50,7 +50,6 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsBtnView = new System.Windows.Forms.ToolStripSplitButton();
             this.tsMiIcon = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsMiList = new System.Windows.Forms.ToolStripMenuItem();
             this.tsMiIconList = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.imgCollection = new System.Windows.Forms.ImageList(this.components);
@@ -99,7 +98,6 @@
             // 
             this.miView.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.miIcon,
-            this.miList,
             this.miIconList});
             this.miView.Name = "miView";
             this.miView.Size = new System.Drawing.Size(44, 20);
@@ -110,21 +108,14 @@
             this.miIcon.Checked = true;
             this.miIcon.CheckState = System.Windows.Forms.CheckState.Checked;
             this.miIcon.Name = "miIcon";
-            this.miIcon.Size = new System.Drawing.Size(123, 22);
+            this.miIcon.Size = new System.Drawing.Size(152, 22);
             this.miIcon.Text = "Icons";
             this.miIcon.Click += new System.EventHandler(this.miIcon_Click);
-            // 
-            // miList
-            // 
-            this.miList.Name = "miList";
-            this.miList.Size = new System.Drawing.Size(123, 22);
-            this.miList.Text = "List";
-            this.miList.Click += new System.EventHandler(this.miList_Click);
             // 
             // miIconList
             // 
             this.miIconList.Name = "miIconList";
-            this.miIconList.Size = new System.Drawing.Size(123, 22);
+            this.miIconList.Size = new System.Drawing.Size(152, 22);
             this.miIconList.Text = "Icons List";
             this.miIconList.Click += new System.EventHandler(this.miIconList_Click);
             // 
@@ -151,6 +142,7 @@
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsBtnNew,
+            this.toolStripSeparator3,
             this.tsBtnDelAll,
             this.tsBtnDel,
             this.toolStripSeparator1,
@@ -172,7 +164,12 @@
             this.tsBtnNew.Name = "tsBtnNew";
             this.tsBtnNew.Size = new System.Drawing.Size(23, 22);
             this.tsBtnNew.Text = "toolStripButton1";
-            this.tsBtnNew.Click += new System.EventHandler(this.tsBtnNew_Click);
+            this.tsBtnNew.Click += new System.EventHandler(this.miNew_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
             // 
             // tsBtnDelAll
             // 
@@ -225,7 +222,6 @@
             this.tsBtnView.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tsBtnView.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsMiIcon,
-            this.tsMiList,
             this.tsMiIconList});
             this.tsBtnView.Image = global::ProyectoDIAndres.Properties.Resources.view_list;
             this.tsBtnView.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -238,21 +234,14 @@
             this.tsMiIcon.Checked = true;
             this.tsMiIcon.CheckState = System.Windows.Forms.CheckState.Checked;
             this.tsMiIcon.Name = "tsMiIcon";
-            this.tsMiIcon.Size = new System.Drawing.Size(131, 22);
+            this.tsMiIcon.Size = new System.Drawing.Size(152, 22);
             this.tsMiIcon.Text = "Icons";
             this.tsMiIcon.Click += new System.EventHandler(this.miIcon_Click);
-            // 
-            // tsMiList
-            // 
-            this.tsMiList.Name = "tsMiList";
-            this.tsMiList.Size = new System.Drawing.Size(131, 22);
-            this.tsMiList.Text = "List";
-            this.tsMiList.Click += new System.EventHandler(this.miList_Click);
             // 
             // tsMiIconList
             // 
             this.tsMiIconList.Name = "tsMiIconList";
-            this.tsMiIconList.Size = new System.Drawing.Size(131, 22);
+            this.tsMiIconList.Size = new System.Drawing.Size(152, 22);
             this.tsMiIconList.Text = "Icons - List";
             this.tsMiIconList.Click += new System.EventHandler(this.miIconList_Click);
             // 
@@ -304,7 +293,6 @@
         private System.Windows.Forms.ToolStripButton tsBtnNew;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.ToolStripMenuItem miIcon;
-        private System.Windows.Forms.ToolStripMenuItem miList;
         private System.Windows.Forms.ToolStripMenuItem miIconList;
         private System.Windows.Forms.ToolStripMenuItem miNew;
         private System.Windows.Forms.ToolStripButton tsBtnDelAll;
@@ -315,10 +303,10 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripSplitButton tsBtnView;
         private System.Windows.Forms.ToolStripMenuItem tsMiIcon;
-        private System.Windows.Forms.ToolStripMenuItem tsMiList;
         private System.Windows.Forms.ToolStripMenuItem tsMiIconList;
         public System.Windows.Forms.ImageList imgCollection;
         public System.Windows.Forms.FlowLayoutPanel panelFondo;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
     }
 }
 
