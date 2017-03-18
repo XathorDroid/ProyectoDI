@@ -3,51 +3,67 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ProyectoDIAndres {
+namespace ProyectoDIAndres
+{
 
-    public partial class DataForm : Form {
+    public partial class DataForm : Form
+    {
 
-        String imgFile;
+        String imgFile = null;
         byte viewSelect;
         private Form1 frm1;
 
-        public DataForm(Form1 frm1Send, byte viewSelectSend) {
+        public DataForm(Form1 frm1Send, byte viewSelectSend)
+        {
             InitializeComponent();
             frm1 = frm1Send;
             viewSelect = viewSelectSend;
         }
 
-        private void btnBrowse_Click(object sender, EventArgs e) {
+        private void btnBrowse_Click(object sender, EventArgs e)
+        {
             OpenFileDialog ofd = new OpenFileDialog();
-            if (ofd.ShowDialog() == DialogResult.OK) {
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
                 imgFile = ofd.FileName;
-                pbImage.SizeMode = PictureBoxSizeMode.StretchImage;
+                pbImage.SizeMode = PictureBoxSizeMode.CenterImage;
                 pbImage.Image = Bitmap.FromFile(imgFile);
                 lblDimens.Visible = false;
             }
         }
 
-        private void btnCancel_Click(object sender, EventArgs e) {
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
             this.Dispose();
         }
 
-        private void btnOk_Click(object sender, EventArgs e) {
-            if (viewSelect == 1) {
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+            if (viewSelect == 1)
+            {
                 DatosNormal dn = new DatosNormal();
                 dn.setDatas(imgFile, txtTitle.Text);
 
-                //frm1.panelFondo.FlowDirection = FlowDirection.LeftToRight;
                 frm1.panelFondo.Controls.Add(dn);
-            } else if(viewSelect == 2) {
+            }
+            else if (viewSelect == 2)
+            {
                 DatosListaImagen dli = new DatosListaImagen();
                 dli.setDatas(imgFile, txtTitle.Text);
-                dli.BorderStyle = BorderStyle.FixedSingle;
 
-                //frm1.panelFondo.FlowDirection = FlowDirection.TopDown;
                 frm1.panelFondo.Controls.Add(dli);
             }
 
+            panelFondoControles();
             this.Dispose();
+        }
+
+        private void panelFondoControles()
+        {
+            foreach (Control c in frm1.panelFondo.Controls)
+            {
+                c.ContextMenuStrip = frm1.msControls;
+            }
         }
 
     }

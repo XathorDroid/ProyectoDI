@@ -60,6 +60,10 @@ namespace ProyectoDIAndres {
             //    listaDn.Add((ControlDatos.DatosNormal)c);
             //}
         }
-        
+
+        private void exitToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

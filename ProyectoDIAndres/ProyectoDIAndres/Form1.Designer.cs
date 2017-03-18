@@ -52,10 +52,19 @@
             this.tsMiIcon = new System.Windows.Forms.ToolStripMenuItem();
             this.tsMiIconList = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.imgCollection = new System.Windows.Forms.ImageList(this.components);
             this.panelFondo = new System.Windows.Forms.FlowLayoutPanel();
+            this.msControls = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.editToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.msPanel = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.removeAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.myTips = new System.Windows.Forms.ToolTip(this.components);
+            this.miExit = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            this.msControls.SuspendLayout();
+            this.msPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -76,7 +85,8 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.miNew});
+            this.miNew,
+            this.miExit});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
@@ -84,7 +94,7 @@
             // miNew
             // 
             this.miNew.Name = "miNew";
-            this.miNew.Size = new System.Drawing.Size(98, 22);
+            this.miNew.Size = new System.Drawing.Size(152, 22);
             this.miNew.Text = "&New";
             this.miNew.Click += new System.EventHandler(this.miNew_Click);
             // 
@@ -245,19 +255,61 @@
             this.tsMiIconList.Text = "Icons - List";
             this.tsMiIconList.Click += new System.EventHandler(this.miIconList_Click);
             // 
-            // imgCollection
-            // 
-            this.imgCollection.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imgCollection.ImageSize = new System.Drawing.Size(16, 16);
-            this.imgCollection.TransparentColor = System.Drawing.Color.Transparent;
-            // 
             // panelFondo
             // 
+            this.panelFondo.ContextMenuStrip = this.msPanel;
             this.panelFondo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelFondo.Location = new System.Drawing.Point(0, 49);
             this.panelFondo.Name = "panelFondo";
             this.panelFondo.Size = new System.Drawing.Size(708, 436);
             this.panelFondo.TabIndex = 2;
+            // 
+            // msControls
+            // 
+            this.msControls.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editToolStripMenuItem1,
+            this.removeToolStripMenuItem});
+            this.msControls.Name = "msControls";
+            this.msControls.Size = new System.Drawing.Size(118, 48);
+            // 
+            // editToolStripMenuItem1
+            // 
+            this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
+            this.editToolStripMenuItem1.Size = new System.Drawing.Size(117, 22);
+            this.editToolStripMenuItem1.Text = "&Edit";
+            // 
+            // removeToolStripMenuItem
+            // 
+            this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.removeToolStripMenuItem.Text = "&Remove";
+            // 
+            // msPanel
+            // 
+            this.msPanel.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newToolStripMenuItem,
+            this.removeAllToolStripMenuItem});
+            this.msPanel.Name = "msPanel";
+            this.msPanel.Size = new System.Drawing.Size(135, 48);
+            // 
+            // newToolStripMenuItem
+            // 
+            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.newToolStripMenuItem.Text = "&New";
+            // 
+            // removeAllToolStripMenuItem
+            // 
+            this.removeAllToolStripMenuItem.Name = "removeAllToolStripMenuItem";
+            this.removeAllToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.removeAllToolStripMenuItem.Text = "&Remove All";
+            // 
+            // miExit
+            // 
+            this.miExit.Name = "miExit";
+            this.miExit.Size = new System.Drawing.Size(152, 22);
+            this.miExit.Text = "&Exit";
+            this.miExit.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -275,6 +327,8 @@
             this.menuStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.msControls.ResumeLayout(false);
+            this.msPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -304,9 +358,16 @@
         private System.Windows.Forms.ToolStripSplitButton tsBtnView;
         private System.Windows.Forms.ToolStripMenuItem tsMiIcon;
         private System.Windows.Forms.ToolStripMenuItem tsMiIconList;
-        public System.Windows.Forms.ImageList imgCollection;
         public System.Windows.Forms.FlowLayoutPanel panelFondo;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ContextMenuStrip msPanel;
+        private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem removeAllToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip msControls;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem;
+        private System.Windows.Forms.ToolTip myTips;
+        private System.Windows.Forms.ToolStripMenuItem miExit;
     }
 }
 
