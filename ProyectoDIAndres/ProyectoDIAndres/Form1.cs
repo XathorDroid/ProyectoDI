@@ -38,42 +38,56 @@ namespace ProyectoDIAndres {
 
         private void miIcon_Click(object sender, System.EventArgs e)
         {
-            cambiarVista(miIcon, tsMiIcon, miIconList, tsMiIconList);
-            viewSelect = 1;
-
-            listaDnVista.Clear();
-            foreach (DatosListaImagen c in panelFondo.Controls)
+            if (miIcon.Checked == false)
             {
-                listaDliVista.Add(c);
-            }
-            panelFondo.Controls.Clear();
+                cambiarVista(miIcon, tsMiIcon, miIconList, tsMiIconList);
+                viewSelect = 1;
 
-            panelFondo.FlowDirection = FlowDirection.LeftToRight;
-            foreach (DatosListaImagen c in listaDliVista)
-            {
-                DatosNormal dn = new DatosNormal();
-                dn.setDatas(c.getImageFile(), c.getTitle());
-                panelFondo.Controls.Add(dn);
+                listaDnPanel.Clear();
+                listaDliPanel.Clear();
+                foreach (DatosListaImagen c in panelFondo.Controls)
+                {
+                    listaDliPanel.Add(c);
+                }
+                panelFondo.Controls.Clear();
+
+                panelFondo.FlowDirection = FlowDirection.LeftToRight;
+                foreach (DatosListaImagen c in listaDliPanel)
+                {
+                    DatosNormal dn = new DatosNormal();
+                    dn.setDatas(c.getImage(), c.getTitle());
+                    eventosDatosNormal(dn);
+                    listaDnPanel.Add(dn);
+                    panelFondo.Controls.Add(dn);
+                    panelFondoControles();
+                }
             }
         }
 
         private void miIconList_Click(object sender, System.EventArgs e) {
-            cambiarVista(miIconList, tsMiIconList, miIcon, tsMiIcon);
-            viewSelect = 2;
-
-            listaDliVista.Clear();
-            foreach (DatosNormal c in panelFondo.Controls)
+            if (miIconList.Checked == false)
             {
-                listaDnVista.Add(c);
-            }
-            panelFondo.Controls.Clear();
+                cambiarVista(miIconList, tsMiIconList, miIcon, tsMiIcon);
+                viewSelect = 2;
 
-            panelFondo.FlowDirection = FlowDirection.TopDown;
-            foreach (DatosNormal c in listaDnVista)
-            {
-                DatosListaImagen dli = new DatosListaImagen();
-                dli.setDatas(c.getImageFile(), c.getTitle());
-                panelFondo.Controls.Add(dli);
+                listaDliPanel.Clear();
+                listaDnPanel.Clear();
+                foreach (DatosNormal c in panelFondo.Controls)
+                {
+                    listaDnPanel.Add(c);
+                }
+                panelFondo.Controls.Clear();
+
+                panelFondo.FlowDirection = FlowDirection.TopDown;
+                foreach (DatosNormal c in listaDnPanel)
+                {
+                    DatosListaImagen dli = new DatosListaImagen();
+                    dli.setDatas(c.getImage(), c.getTitle());
+                    eventosDatosListaImagen(dli);
+                    listaDliPanel.Add(dli);
+                    panelFondo.Controls.Add(dli);
+                    panelFondoControles();
+                }
             }
         }
 
@@ -183,11 +197,11 @@ namespace ProyectoDIAndres {
                 if(viewSelect == 1)
                 {
                     int index = panelFondo.Controls.IndexOf(dnSelected);
-                    frm = new DataForm(this, new_edit, index, dnSelected);
+                    frm = new DataForm(this, new_edit, viewSelect, index, dnSelected);
                 } else
                 {
                     int index = panelFondo.Controls.IndexOf(dliSelected);
-                    frm = new DataForm(this, new_edit, index, dliSelected);
+                    frm = new DataForm(this, new_edit, viewSelect, index, dliSelected);
                 }
             }
             frm.Show();
@@ -211,6 +225,36 @@ namespace ProyectoDIAndres {
             if (dliSelected != null)
             {
                 dliSelected.BackColor = System.Drawing.Color.Transparent;
+            }
+        }
+
+        public void eventosDatosNormal(DatosNormal dn)
+        {
+            dn.getPanelPb().Click += getControlUser;
+            dn.getPb().Click += getControlUser;
+            dn.getLbl().Click += getControlUser;
+
+            dn.getPanelPb().MouseUp += getControlUser;
+            dn.getPb().MouseUp += getControlUser;
+            dn.getLbl().MouseUp += getControlUser;
+        }
+
+        public void eventosDatosListaImagen(DatosListaImagen dli)
+        {
+            dli.getPanelPb().Click += getControlUser;
+            dli.getPb().Click += getControlUser;
+            dli.getLbl().Click += getControlUser;
+
+            dli.getPanelPb().MouseUp += getControlUser;
+            dli.getPb().MouseUp += getControlUser;
+            dli.getLbl().MouseUp += getControlUser;
+        }
+
+        public void panelFondoControles()
+        {
+            foreach (Control c in panelFondo.Controls)
+            {
+                c.ContextMenuStrip = msControls;
             }
         }
     }

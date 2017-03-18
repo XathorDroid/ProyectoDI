@@ -10,6 +10,7 @@ namespace ProyectoDIAndres
     {
 
         String imgFile = null, title = "";
+        Image imagen = null;
         byte viewSelect;
         private Form1 frm1;
         int indexReceived, new_editReceived;
@@ -24,35 +25,41 @@ namespace ProyectoDIAndres
             new_editReceived = new_editSend;
         }
 
-        public DataForm(Form1 frm1Send, int new_editSend, int indexSend, DatosNormal dnSend)
+        public DataForm(Form1 frm1Send, int new_editSend, byte viewSelectSend, int indexSend, DatosNormal dnSend)
         {
             InitializeComponent();
             frm1 = frm1Send;
+            viewSelect = viewSelectSend;
             new_editReceived = new_editSend;
             indexReceived = indexSend;
             dnReceived = dnSend;
 
             title = dnReceived.getTitle();
-            imgFile = dnReceived.getImageFile();
+            //imgFile = dnReceived.getImageFile();
+            imagen = dnReceived.getImage();
 
             txtTitle.Text = title;
-            pbImage.Image = Bitmap.FromFile(imgFile);
+            //pbImage.Image = Bitmap.FromFile(imgFile);
+            pbImage.Image = imagen;
             lblDimens.Visible = false;
         }
 
-        public DataForm(Form1 frm1Send, int new_editSend, int indexSend, DatosListaImagen dliSend)
+        public DataForm(Form1 frm1Send, int new_editSend, byte viewSelectSend, int indexSend, DatosListaImagen dliSend)
         {
             InitializeComponent();
             frm1 = frm1Send;
+            viewSelect = viewSelectSend;
             new_editReceived = new_editSend;
             indexReceived = indexSend;
             dliReceived = dliSend;
 
             title = dliReceived.getTitle();
-            imgFile = dliReceived.getImageFile();
+            //imgFile = dliReceived.getImageFile();
+            imagen = dliReceived.getImage();
 
             txtTitle.Text = title;
-            pbImage.Image = Bitmap.FromFile(imgFile);
+            //pbImage.Image = Bitmap.FromFile(imgFile);
+            pbImage.Image = imagen;
             lblDimens.Visible = false;
         }
 
@@ -62,7 +69,8 @@ namespace ProyectoDIAndres
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 imgFile = ofd.FileName;
-                pbImage.Image = Bitmap.FromFile(imgFile);
+                imagen = Bitmap.FromFile(imgFile);
+                pbImage.Image = imagen;
                 lblDimens.Visible = false;
             }
         }
@@ -80,7 +88,7 @@ namespace ProyectoDIAndres
                 if (viewSelect == 1)
                 {
                     DatosNormal dn = new DatosNormal();
-                    dn.setDatas(imgFile, title);
+                    dn.setDatas(imagen, title);
 
                     dn.getPanelPb().Click += frm1.getControlUser;
                     dn.getPb().Click += frm1.getControlUser;
@@ -96,7 +104,7 @@ namespace ProyectoDIAndres
                 else if (viewSelect == 2)
                 {
                     DatosListaImagen dli = new DatosListaImagen();
-                    dli.setDatas(imgFile, title);
+                    dli.setDatas(imagen, title);
 
                     dli.getPanelPb().Click += frm1.getControlUser;
                     dli.getPb().Click += frm1.getControlUser;
@@ -110,52 +118,41 @@ namespace ProyectoDIAndres
                     frm1.listaDliPanel.Add(dli);
                 }
 
-            } else
+            } else if(new_editReceived == 2)
             {
                 if (viewSelect == 1)
                 {
                     DatosNormal dn = new DatosNormal();
-                    dn.setDatas(imgFile, title);
+                    dn.setDatas(imagen, title);
 
-                    dn.getPanelPb().Click += frm1.getControlUser;
-                    dn.getPb().Click += frm1.getControlUser;
-                    dn.getLbl().Click += frm1.getControlUser;
+                    frm1.eventosDatosNormal(dn);
 
-                    dn.getPanelPb().MouseUp += frm1.getControlUser;
-                    dn.getPb().MouseUp += frm1.getControlUser;
-                    dn.getLbl().MouseUp += frm1.getControlUser;
-
-                    //frm1.panelFondo.Controls.SetChildIndex(dn, in);
-                    MessageBox.Show(frm1.listaDnPanel.Count.ToString());
+                    frm1.listaDnPanel.RemoveAt(indexReceived);
                     frm1.listaDnPanel.Insert(indexReceived, dn);
-                    MessageBox.Show(frm1.listaDnPanel.Count.ToString());
+                    frm1.panelFondo.Controls.Clear();
+                    foreach(DatosNormal d in frm1.listaDnPanel)
+                    {
+                        frm1.panelFondo.Controls.Add(d);
+                    }
                 }
                 else if (viewSelect == 2)
                 {
                     DatosListaImagen dli = new DatosListaImagen();
-                    dli.setDatas(imgFile, title);
+                    dli.setDatas(imagen, title);
 
-                    dli.getPanelPb().Click += frm1.getControlUser;
-                    dli.getPb().Click += frm1.getControlUser;
-                    dli.getLbl().Click += frm1.getControlUser;
+                    frm1.eventosDatosListaImagen(dli);
 
-                    dli.getPanelPb().MouseUp += frm1.getControlUser;
-                    dli.getPb().MouseUp += frm1.getControlUser;
-                    dli.getLbl().MouseUp += frm1.getControlUser;
-
-                    frm1.panelFondo.Controls.Add(dli);
+                    frm1.listaDliPanel.RemoveAt(indexReceived);
+                    frm1.listaDliPanel.Insert(indexReceived, dli);
+                    frm1.panelFondo.Controls.Clear();
+                    foreach(DatosListaImagen d in frm1.listaDliPanel)
+                    {
+                        frm1.panelFondo.Controls.Add(d);
+                    }
                 }
             }
-            panelFondoControles();
+            frm1.panelFondoControles();
             this.Dispose();
-        }
-
-        private void panelFondoControles()
-        {
-            foreach (Control c in frm1.panelFondo.Controls)
-            {
-                c.ContextMenuStrip = frm1.msControls;
-            }
         }
 
     }

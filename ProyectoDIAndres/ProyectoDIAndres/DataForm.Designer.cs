@@ -70,6 +70,7 @@
             // 
             // btnBrowse
             // 
+            this.btnBrowse.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnBrowse.Location = new System.Drawing.Point(90, 83);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(84, 23);
