@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Forms;
 using ControlDatos;
+using System;
 
 namespace ProyectoDIAndres {
 
@@ -9,7 +10,8 @@ namespace ProyectoDIAndres {
         public byte viewSelect;
         private List<DatosNormal> listaDn;
         private List<DatosListaImagen> listaDli;
-        
+        private DatosNormal dnRemove;
+
         public Form1() {
             InitializeComponent();
 
@@ -87,6 +89,29 @@ namespace ProyectoDIAndres {
             ts1.Checked = true;
             mi2.Checked = false;
             ts2.Checked = false;
+        }
+
+        public void getControlUser(object sender, EventArgs e) {
+
+
+            if(sender is Panel) {
+                Panel panel = (Panel)sender;
+                dnRemove = (DatosNormal)panel.Parent;
+                dnRemove.BackColor = System.Drawing.Color.Aquamarine;
+            } else if(sender is Label) {
+                Label lbl = (Label)sender;
+                dnRemove = (DatosNormal)lbl.Parent.Parent;
+                dnRemove.BackColor = System.Drawing.Color.Aquamarine;
+            } else if(sender is PictureBox) {
+                PictureBox pb = (PictureBox)sender;
+                dnRemove = (DatosNormal)pb.Parent.Parent;
+                dnRemove.BackColor = System.Drawing.Color.Aquamarine;
+            }
+        }
+
+        private void cmsRemove_Click(object sender, EventArgs e)
+        {
+            panelFondo.Controls.Remove(dnRemove);
         }
     }
 }

@@ -44,13 +44,21 @@ namespace ProyectoDIAndres
                 DatosNormal dn = new DatosNormal();
                 dn.setDatas(imgFile, txtTitle.Text);
 
+                dn.getPanelPb().Click += frm1.getControlUser;
+                dn.getPb().Click += frm1.getControlUser;
+                dn.getLbl().Click += frm1.getControlUser;
+
+                dn.getPanelPb().MouseUp += frm1.getControlUser;
+                dn.getPb().MouseUp += frm1.getControlUser;
+                dn.getLbl().MouseUp += frm1.getControlUser;
+
                 frm1.panelFondo.Controls.Add(dn);
             }
             else if (viewSelect == 2)
             {
                 DatosListaImagen dli = new DatosListaImagen();
                 dli.setDatas(imgFile, txtTitle.Text);
-
+                
                 frm1.panelFondo.Controls.Add(dli);
             }
 

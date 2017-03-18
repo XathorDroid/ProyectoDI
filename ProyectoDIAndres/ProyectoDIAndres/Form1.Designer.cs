@@ -32,6 +32,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miNew = new System.Windows.Forms.ToolStripMenuItem();
+            this.miExit = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miView = new System.Windows.Forms.ToolStripMenuItem();
             this.miIcon = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,18 +54,17 @@
             this.tsMiIconList = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panelFondo = new System.Windows.Forms.FlowLayoutPanel();
-            this.msControls = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.editToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msPanel = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cmsNew = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsRemoveAll = new System.Windows.Forms.ToolStripMenuItem();
+            this.msControls = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.editToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmsRemove = new System.Windows.Forms.ToolStripMenuItem();
             this.myTips = new System.Windows.Forms.ToolTip(this.components);
-            this.miExit = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            this.msControls.SuspendLayout();
             this.msPanel.SuspendLayout();
+            this.msControls.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -94,9 +94,16 @@
             // miNew
             // 
             this.miNew.Name = "miNew";
-            this.miNew.Size = new System.Drawing.Size(152, 22);
+            this.miNew.Size = new System.Drawing.Size(98, 22);
             this.miNew.Text = "&New";
             this.miNew.Click += new System.EventHandler(this.miNew_Click);
+            // 
+            // miExit
+            // 
+            this.miExit.Name = "miExit";
+            this.miExit.Size = new System.Drawing.Size(98, 22);
+            this.miExit.Text = "&Exit";
+            this.miExit.Click += new System.EventHandler(this.miExit_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -199,6 +206,7 @@
             this.tsBtnDel.Name = "tsBtnDel";
             this.tsBtnDel.Size = new System.Drawing.Size(23, 22);
             this.tsBtnDel.Text = "toolStripButton1";
+            this.tsBtnDel.Click += new System.EventHandler(this.cmsRemove_Click);
             // 
             // toolStripSeparator1
             // 
@@ -265,54 +273,48 @@
             this.panelFondo.Size = new System.Drawing.Size(728, 444);
             this.panelFondo.TabIndex = 2;
             // 
-            // msControls
-            // 
-            this.msControls.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editToolStripMenuItem1,
-            this.removeToolStripMenuItem});
-            this.msControls.Name = "msControls";
-            this.msControls.Size = new System.Drawing.Size(118, 48);
-            // 
-            // editToolStripMenuItem1
-            // 
-            this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
-            this.editToolStripMenuItem1.Size = new System.Drawing.Size(117, 22);
-            this.editToolStripMenuItem1.Text = "&Edit";
-            // 
-            // removeToolStripMenuItem
-            // 
-            this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
-            this.removeToolStripMenuItem.Text = "&Remove";
-            // 
             // msPanel
             // 
             this.msPanel.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cmsNew,
             this.cmsRemoveAll});
             this.msPanel.Name = "msPanel";
-            this.msPanel.Size = new System.Drawing.Size(153, 70);
+            this.msPanel.Size = new System.Drawing.Size(135, 48);
             // 
             // cmsNew
             // 
             this.cmsNew.Name = "cmsNew";
-            this.cmsNew.Size = new System.Drawing.Size(152, 22);
+            this.cmsNew.Size = new System.Drawing.Size(134, 22);
             this.cmsNew.Text = "&New";
             this.cmsNew.Click += new System.EventHandler(this.miNew_Click);
             // 
             // cmsRemoveAll
             // 
             this.cmsRemoveAll.Name = "cmsRemoveAll";
-            this.cmsRemoveAll.Size = new System.Drawing.Size(152, 22);
+            this.cmsRemoveAll.Size = new System.Drawing.Size(134, 22);
             this.cmsRemoveAll.Text = "&Remove All";
             this.cmsRemoveAll.Click += new System.EventHandler(this.tsBtnDelAll_Click);
             // 
-            // miExit
+            // msControls
             // 
-            this.miExit.Name = "miExit";
-            this.miExit.Size = new System.Drawing.Size(152, 22);
-            this.miExit.Text = "&Exit";
-            this.miExit.Click += new System.EventHandler(this.miExit_Click);
+            this.msControls.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editToolStripMenuItem1,
+            this.cmsRemove});
+            this.msControls.Name = "msControls";
+            this.msControls.Size = new System.Drawing.Size(118, 48);
+            // 
+            // editToolStripMenuItem1
+            // 
+            this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
+            this.editToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.editToolStripMenuItem1.Text = "&Edit";
+            // 
+            // cmsRemove
+            // 
+            this.cmsRemove.Name = "cmsRemove";
+            this.cmsRemove.Size = new System.Drawing.Size(152, 22);
+            this.cmsRemove.Text = "&Remove";
+            this.cmsRemove.Click += new System.EventHandler(this.cmsRemove_Click);
             // 
             // Form1
             // 
@@ -330,8 +332,8 @@
             this.menuStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            this.msControls.ResumeLayout(false);
             this.msPanel.ResumeLayout(false);
+            this.msControls.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -367,7 +369,7 @@
         private System.Windows.Forms.ToolStripMenuItem cmsNew;
         private System.Windows.Forms.ToolStripMenuItem cmsRemoveAll;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cmsRemove;
         private System.Windows.Forms.ToolTip myTips;
         private System.Windows.Forms.ToolStripMenuItem miExit;
         public System.Windows.Forms.ContextMenuStrip msControls;
