@@ -33,6 +33,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miNew = new System.Windows.Forms.ToolStripMenuItem();
+            this.miSave = new System.Windows.Forms.ToolStripMenuItem();
+            this.miLoad = new System.Windows.Forms.ToolStripMenuItem();
             this.miExit = new System.Windows.Forms.ToolStripMenuItem();
             this.miView = new System.Windows.Forms.ToolStripMenuItem();
             this.miIcon = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,20 +42,14 @@
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.herlpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.tsBtnNew = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsBtnDelAll = new System.Windows.Forms.ToolStripButton();
-            this.tsBtnDel = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsBtnEdit = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsBtnUndo = new System.Windows.Forms.ToolStripButton();
-            this.tsBtnRedo = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsBtnView = new System.Windows.Forms.ToolStripSplitButton();
-            this.tsMiIcon = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsMiIconList = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panelFondo = new System.Windows.Forms.FlowLayoutPanel();
             this.msPanel = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -63,6 +59,17 @@
             this.editToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsRemove = new System.Windows.Forms.ToolStripMenuItem();
             this.myTips = new System.Windows.Forms.ToolTip(this.components);
+            this.tsBtnNew = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnSave = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnLoad = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnDelAll = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnDel = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnEdit = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnUndo = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnRedo = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnView = new System.Windows.Forms.ToolStripSplitButton();
+            this.tsMiIcon = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsMiIconList = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.msPanel.SuspendLayout();
@@ -84,6 +91,8 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.miNew,
+            this.miSave,
+            this.miLoad,
             this.miExit});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
@@ -93,6 +102,16 @@
             this.miNew.Name = "miNew";
             resources.ApplyResources(this.miNew, "miNew");
             this.miNew.Click += new System.EventHandler(this.miNew_Click);
+            // 
+            // miSave
+            // 
+            this.miSave.Name = "miSave";
+            resources.ApplyResources(this.miSave, "miSave");
+            // 
+            // miLoad
+            // 
+            this.miLoad.Name = "miLoad";
+            resources.ApplyResources(this.miLoad, "miLoad");
             // 
             // miExit
             // 
@@ -126,6 +145,7 @@
             // 
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             resources.ApplyResources(this.toolsToolStripMenuItem, "toolsToolStripMenuItem");
+            this.toolsToolStripMenuItem.Click += new System.EventHandler(this.toolsToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -134,8 +154,15 @@
             // 
             // herlpToolStripMenuItem
             // 
+            this.herlpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutToolStripMenuItem});
             this.herlpToolStripMenuItem.Name = "herlpToolStripMenuItem";
             resources.ApplyResources(this.herlpToolStripMenuItem, "herlpToolStripMenuItem");
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            resources.ApplyResources(this.aboutToolStripMenuItem, "aboutToolStripMenuItem");
             // 
             // toolStrip1
             // 
@@ -143,6 +170,9 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsBtnNew,
             this.toolStripSeparator3,
+            this.tsBtnSave,
+            this.tsBtnLoad,
+            this.toolStripSeparator5,
             this.tsBtnDelAll,
             this.tsBtnDel,
             this.toolStripSeparator4,
@@ -151,99 +181,40 @@
             this.tsBtnUndo,
             this.tsBtnRedo,
             this.toolStripSeparator2,
-            this.tsBtnView});
+            this.tsBtnView,
+            this.toolStripSeparator6});
             resources.ApplyResources(this.toolStrip1, "toolStrip1");
             this.toolStrip1.Name = "toolStrip1";
-            // 
-            // tsBtnNew
-            // 
-            this.tsBtnNew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsBtnNew.Image = global::ProyectoDIAndres.Properties.Resources.plus_box_1_;
-            resources.ApplyResources(this.tsBtnNew, "tsBtnNew");
-            this.tsBtnNew.Name = "tsBtnNew";
-            this.tsBtnNew.Click += new System.EventHandler(this.miNew_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
             // 
-            // tsBtnDelAll
+            // toolStripSeparator5
             // 
-            this.tsBtnDelAll.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsBtnDelAll.Image = global::ProyectoDIAndres.Properties.Resources.delete_sweep;
-            resources.ApplyResources(this.tsBtnDelAll, "tsBtnDelAll");
-            this.tsBtnDelAll.Name = "tsBtnDelAll";
-            this.tsBtnDelAll.Click += new System.EventHandler(this.tsBtnDelAll_Click);
-            // 
-            // tsBtnDel
-            // 
-            this.tsBtnDel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsBtnDel.Image = global::ProyectoDIAndres.Properties.Resources.delete;
-            resources.ApplyResources(this.tsBtnDel, "tsBtnDel");
-            this.tsBtnDel.Name = "tsBtnDel";
-            this.tsBtnDel.Click += new System.EventHandler(this.cmsRemove_Click);
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            resources.ApplyResources(this.toolStripSeparator5, "toolStripSeparator5");
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
             // 
-            // tsBtnEdit
-            // 
-            this.tsBtnEdit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsBtnEdit.Image = global::ProyectoDIAndres.Properties.Resources.lead_pencil;
-            resources.ApplyResources(this.tsBtnEdit, "tsBtnEdit");
-            this.tsBtnEdit.Name = "tsBtnEdit";
-            this.tsBtnEdit.Click += new System.EventHandler(this.tsBtnEdit_Click);
-            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
-            // 
-            // tsBtnUndo
-            // 
-            this.tsBtnUndo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsBtnUndo.Image = global::ProyectoDIAndres.Properties.Resources.undo_variant;
-            resources.ApplyResources(this.tsBtnUndo, "tsBtnUndo");
-            this.tsBtnUndo.Name = "tsBtnUndo";
-            // 
-            // tsBtnRedo
-            // 
-            this.tsBtnRedo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsBtnRedo.Image = global::ProyectoDIAndres.Properties.Resources.redo_variant;
-            resources.ApplyResources(this.tsBtnRedo, "tsBtnRedo");
-            this.tsBtnRedo.Name = "tsBtnRedo";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
             // 
-            // tsBtnView
+            // toolStripSeparator6
             // 
-            this.tsBtnView.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsBtnView.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsMiIcon,
-            this.tsMiIconList});
-            this.tsBtnView.Image = global::ProyectoDIAndres.Properties.Resources.view_list;
-            resources.ApplyResources(this.tsBtnView, "tsBtnView");
-            this.tsBtnView.Name = "tsBtnView";
-            // 
-            // tsMiIcon
-            // 
-            this.tsMiIcon.Checked = true;
-            this.tsMiIcon.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.tsMiIcon.Name = "tsMiIcon";
-            resources.ApplyResources(this.tsMiIcon, "tsMiIcon");
-            this.tsMiIcon.Click += new System.EventHandler(this.miIcon_Click);
-            // 
-            // tsMiIconList
-            // 
-            this.tsMiIconList.Name = "tsMiIconList";
-            resources.ApplyResources(this.tsMiIconList, "tsMiIconList");
-            this.tsMiIconList.Click += new System.EventHandler(this.miIconList_Click);
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            resources.ApplyResources(this.toolStripSeparator6, "toolStripSeparator6");
             // 
             // panelFondo
             // 
@@ -292,6 +263,90 @@
             this.cmsRemove.Name = "cmsRemove";
             resources.ApplyResources(this.cmsRemove, "cmsRemove");
             this.cmsRemove.Click += new System.EventHandler(this.cmsRemove_Click);
+            // 
+            // tsBtnNew
+            // 
+            this.tsBtnNew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsBtnNew.Image = global::ProyectoDIAndres.Properties.Resources.plus_box_1_;
+            resources.ApplyResources(this.tsBtnNew, "tsBtnNew");
+            this.tsBtnNew.Name = "tsBtnNew";
+            this.tsBtnNew.Click += new System.EventHandler(this.miNew_Click);
+            // 
+            // tsBtnSave
+            // 
+            this.tsBtnSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsBtnSave.Image = global::ProyectoDIAndres.Properties.Resources.content_save;
+            resources.ApplyResources(this.tsBtnSave, "tsBtnSave");
+            this.tsBtnSave.Name = "tsBtnSave";
+            // 
+            // tsBtnLoad
+            // 
+            this.tsBtnLoad.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsBtnLoad.Image = global::ProyectoDIAndres.Properties.Resources.download;
+            resources.ApplyResources(this.tsBtnLoad, "tsBtnLoad");
+            this.tsBtnLoad.Name = "tsBtnLoad";
+            // 
+            // tsBtnDelAll
+            // 
+            this.tsBtnDelAll.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsBtnDelAll.Image = global::ProyectoDIAndres.Properties.Resources.delete_sweep;
+            resources.ApplyResources(this.tsBtnDelAll, "tsBtnDelAll");
+            this.tsBtnDelAll.Name = "tsBtnDelAll";
+            this.tsBtnDelAll.Click += new System.EventHandler(this.tsBtnDelAll_Click);
+            // 
+            // tsBtnDel
+            // 
+            this.tsBtnDel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsBtnDel.Image = global::ProyectoDIAndres.Properties.Resources.delete;
+            resources.ApplyResources(this.tsBtnDel, "tsBtnDel");
+            this.tsBtnDel.Name = "tsBtnDel";
+            this.tsBtnDel.Click += new System.EventHandler(this.cmsRemove_Click);
+            // 
+            // tsBtnEdit
+            // 
+            this.tsBtnEdit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsBtnEdit.Image = global::ProyectoDIAndres.Properties.Resources.lead_pencil;
+            resources.ApplyResources(this.tsBtnEdit, "tsBtnEdit");
+            this.tsBtnEdit.Name = "tsBtnEdit";
+            this.tsBtnEdit.Click += new System.EventHandler(this.tsBtnEdit_Click);
+            // 
+            // tsBtnUndo
+            // 
+            this.tsBtnUndo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsBtnUndo.Image = global::ProyectoDIAndres.Properties.Resources.undo_variant;
+            resources.ApplyResources(this.tsBtnUndo, "tsBtnUndo");
+            this.tsBtnUndo.Name = "tsBtnUndo";
+            // 
+            // tsBtnRedo
+            // 
+            this.tsBtnRedo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsBtnRedo.Image = global::ProyectoDIAndres.Properties.Resources.redo_variant;
+            resources.ApplyResources(this.tsBtnRedo, "tsBtnRedo");
+            this.tsBtnRedo.Name = "tsBtnRedo";
+            // 
+            // tsBtnView
+            // 
+            this.tsBtnView.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsBtnView.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsMiIcon,
+            this.tsMiIconList});
+            this.tsBtnView.Image = global::ProyectoDIAndres.Properties.Resources.view_list;
+            resources.ApplyResources(this.tsBtnView, "tsBtnView");
+            this.tsBtnView.Name = "tsBtnView";
+            // 
+            // tsMiIcon
+            // 
+            this.tsMiIcon.Checked = true;
+            this.tsMiIcon.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.tsMiIcon.Name = "tsMiIcon";
+            resources.ApplyResources(this.tsMiIcon, "tsMiIcon");
+            this.tsMiIcon.Click += new System.EventHandler(this.miIcon_Click);
+            // 
+            // tsMiIconList
+            // 
+            this.tsMiIconList.Name = "tsMiIconList";
+            resources.ApplyResources(this.tsMiIconList, "tsMiIconList");
+            this.tsMiIconList.Click += new System.EventHandler(this.miIconList_Click);
             // 
             // Form1
             // 
@@ -348,6 +403,13 @@
         public System.Windows.Forms.ContextMenuStrip msControls;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton tsBtnEdit;
+        private System.Windows.Forms.ToolStripMenuItem miSave;
+        private System.Windows.Forms.ToolStripMenuItem miLoad;
+        private System.Windows.Forms.ToolStripButton tsBtnSave;
+        private System.Windows.Forms.ToolStripButton tsBtnLoad;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }
 

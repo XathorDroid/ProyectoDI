@@ -257,5 +257,10 @@ namespace ProyectoDIAndres {
                 c.ContextMenuStrip = msControls;
             }
         }
+
+        private void toolsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

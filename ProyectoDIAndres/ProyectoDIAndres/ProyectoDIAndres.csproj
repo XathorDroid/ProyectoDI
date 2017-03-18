@@ -65,6 +65,9 @@
     <Compile Include="Observer-Subject\Subject.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DataForm.es.resx">
+      <DependentUpon>DataForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DataForm.resx">
       <DependentUpon>DataForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -120,6 +123,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\lead-pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\content-save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
