@@ -8,8 +8,10 @@ namespace ProyectoDIAndres {
     public partial class Form1 : Form {
 
         public byte viewSelect;
-        private List<DatosNormal> listaDn;
-        private List<DatosListaImagen> listaDli;
+        private List<DatosNormal> listaDnVista;
+        private List<DatosListaImagen> listaDliVista;
+        public List<DatosNormal> listaDnPanel;
+        public List<DatosListaImagen> listaDliPanel;
         private DatosNormal dnSelected;
         private DatosListaImagen dliSelected;
 
@@ -17,8 +19,10 @@ namespace ProyectoDIAndres {
             InitializeComponent();
 
             viewSelect = 1;
-            listaDn = new List<DatosNormal>();
-            listaDli = new List<DatosListaImagen>();
+            listaDnVista = new List<DatosNormal>();
+            listaDliVista = new List<DatosListaImagen>();
+            listaDnPanel = new List<DatosNormal>();
+            listaDliPanel = new List<DatosListaImagen>();
             dnSelected = null;
             dliSelected = null;
         }
@@ -37,15 +41,15 @@ namespace ProyectoDIAndres {
             cambiarVista(miIcon, tsMiIcon, miIconList, tsMiIconList);
             viewSelect = 1;
 
-            listaDn.Clear();
+            listaDnVista.Clear();
             foreach (DatosListaImagen c in panelFondo.Controls)
             {
-                listaDli.Add(c);
+                listaDliVista.Add(c);
             }
             panelFondo.Controls.Clear();
 
             panelFondo.FlowDirection = FlowDirection.LeftToRight;
-            foreach (DatosListaImagen c in listaDli)
+            foreach (DatosListaImagen c in listaDliVista)
             {
                 DatosNormal dn = new DatosNormal();
                 dn.setDatas(c.getImageFile(), c.getTitle());
@@ -56,16 +60,16 @@ namespace ProyectoDIAndres {
         private void miIconList_Click(object sender, System.EventArgs e) {
             cambiarVista(miIconList, tsMiIconList, miIcon, tsMiIcon);
             viewSelect = 2;
-            
-            listaDli.Clear();
+
+            listaDliVista.Clear();
             foreach (DatosNormal c in panelFondo.Controls)
             {
-                listaDn.Add(c);
+                listaDnVista.Add(c);
             }
             panelFondo.Controls.Clear();
 
             panelFondo.FlowDirection = FlowDirection.TopDown;
-            foreach (DatosNormal c in listaDn)
+            foreach (DatosNormal c in listaDnVista)
             {
                 DatosListaImagen dli = new DatosListaImagen();
                 dli.setDatas(c.getImageFile(), c.getTitle());
@@ -76,8 +80,10 @@ namespace ProyectoDIAndres {
         private void tsBtnDelAll_Click(object sender, System.EventArgs e)
         {
             panelFondo.Controls.Clear();
-            listaDli.Clear();
-            listaDn.Clear();
+            listaDliVista.Clear();
+            listaDnVista.Clear();
+            listaDliPanel.Clear();
+            listaDnPanel.Clear();
         }
 
         private void tsBtnEdit_Click(object sender, EventArgs e)
@@ -91,9 +97,27 @@ namespace ProyectoDIAndres {
         private void cmsRemove_Click(object sender, EventArgs e) {
             if (viewSelect == 1)
             {
+                int var = 0;
+                foreach(DatosNormal d in listaDnPanel)
+                {
+                    if(d.Equals(dnSelected))
+                    {
+                        var = listaDnPanel.IndexOf(d);
+                    }
+                }
+                listaDnPanel.RemoveAt(var);
                 panelFondo.Controls.Remove(dnSelected);
             } else
             {
+                int var = 0;
+                foreach(DatosListaImagen d in listaDliPanel)
+                {
+                    if(d.Equals(dliSelected))
+                    {
+                        var = listaDliPanel.IndexOf(d);
+                    }
+                }
+                listaDliPanel.RemoveAt(var);
                 panelFondo.Controls.Remove(dliSelected);
             }
         }

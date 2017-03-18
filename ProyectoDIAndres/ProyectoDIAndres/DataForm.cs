@@ -12,7 +12,7 @@ namespace ProyectoDIAndres
         String imgFile = null, title = "";
         byte viewSelect;
         private Form1 frm1;
-        int idexReceived, new_editReceived;
+        int indexReceived, new_editReceived;
         DatosNormal dnReceived;
         DatosListaImagen dliReceived;
 
@@ -29,11 +29,11 @@ namespace ProyectoDIAndres
             InitializeComponent();
             frm1 = frm1Send;
             new_editReceived = new_editSend;
-            idexReceived = indexSend;
+            indexReceived = indexSend;
             dnReceived = dnSend;
 
-            title = dliReceived.getTitle();
-            imgFile = dliReceived.getImageFile();
+            title = dnReceived.getTitle();
+            imgFile = dnReceived.getImageFile();
 
             txtTitle.Text = title;
             pbImage.Image = Bitmap.FromFile(imgFile);
@@ -45,7 +45,7 @@ namespace ProyectoDIAndres
             InitializeComponent();
             frm1 = frm1Send;
             new_editReceived = new_editSend;
-            idexReceived = indexSend;
+            indexReceived = indexSend;
             dliReceived = dliSend;
 
             title = dliReceived.getTitle();
@@ -91,6 +91,7 @@ namespace ProyectoDIAndres
                     dn.getLbl().MouseUp += frm1.getControlUser;
 
                     frm1.panelFondo.Controls.Add(dn);
+                    frm1.listaDnPanel.Add(dn);
                 }
                 else if (viewSelect == 2)
                 {
@@ -106,6 +107,7 @@ namespace ProyectoDIAndres
                     dli.getLbl().MouseUp += frm1.getControlUser;
 
                     frm1.panelFondo.Controls.Add(dli);
+                    frm1.listaDliPanel.Add(dli);
                 }
 
             } else
@@ -123,7 +125,10 @@ namespace ProyectoDIAndres
                     dn.getPb().MouseUp += frm1.getControlUser;
                     dn.getLbl().MouseUp += frm1.getControlUser;
 
-                    frm1.panelFondo.Controls.SetChildIndex(dn, in);
+                    //frm1.panelFondo.Controls.SetChildIndex(dn, in);
+                    MessageBox.Show(frm1.listaDnPanel.Count.ToString());
+                    frm1.listaDnPanel.Insert(indexReceived, dn);
+                    MessageBox.Show(frm1.listaDnPanel.Count.ToString());
                 }
                 else if (viewSelect == 2)
                 {
