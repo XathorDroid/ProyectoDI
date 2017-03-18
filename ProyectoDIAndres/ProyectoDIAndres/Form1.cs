@@ -10,7 +10,8 @@ namespace ProyectoDIAndres {
         public byte viewSelect;
         private List<DatosNormal> listaDn;
         private List<DatosListaImagen> listaDli;
-        private DatosNormal dnRemove;
+        private DatosNormal dnSelected;
+        private DatosListaImagen dliSelected;
 
         public Form1() {
             InitializeComponent();
@@ -18,10 +19,12 @@ namespace ProyectoDIAndres {
             viewSelect = 1;
             listaDn = new List<DatosNormal>();
             listaDli = new List<DatosListaImagen>();
+            dnSelected = null;
+            dliSelected = null;
         }
 
         private void miNew_Click(object sender, System.EventArgs e) {
-            showDataForm();
+            showDataForm(1);
         }
 
         private void miExit_Click(object sender, System.EventArgs e)
@@ -77,9 +80,92 @@ namespace ProyectoDIAndres {
             listaDn.Clear();
         }
 
-        private void showDataForm()
+        private void tsBtnEdit_Click(object sender, EventArgs e)
         {
-            DataForm frm = new DataForm(this, viewSelect);
+            if (dnSelected != null || dliSelected != null)
+            {
+                showDataForm(2);
+            }
+        }
+
+        private void cmsRemove_Click(object sender, EventArgs e) {
+            if (viewSelect == 1)
+            {
+                panelFondo.Controls.Remove(dnSelected);
+            } else
+            {
+                panelFondo.Controls.Remove(dliSelected);
+            }
+        }
+
+        public void getControlUser(object sender, EventArgs e) {
+            cleanBackgrounds();
+
+            if (sender is Panel)
+            {
+                Panel panel = (Panel)sender;
+                if (panel.Parent is DatosNormal)
+                {
+                    dnSelected = (DatosNormal)panel.Parent;
+                    dnSelected.BackColor = System.Drawing.Color.Aquamarine;
+                } else
+                {
+                    dliSelected = (DatosListaImagen)panel.Parent;
+                    dliSelected.BackColor = System.Drawing.Color.Aquamarine;
+                }
+            }
+            else if (sender is Label)
+            {
+                Label lbl = (Label)sender;
+                if (lbl.Parent.Parent is DatosNormal)
+                {
+                    dnSelected = (DatosNormal)lbl.Parent.Parent;
+                    dnSelected.BackColor = System.Drawing.Color.Aquamarine;
+                } else
+                {
+                    dliSelected = (DatosListaImagen)lbl.Parent.Parent;
+                    dliSelected.BackColor = System.Drawing.Color.Aquamarine;
+                }
+            }
+            else if (sender is PictureBox)
+            {
+                PictureBox pb = (PictureBox)sender;
+                if (pb.Parent.Parent is DatosNormal)
+                {
+                    dnSelected = (DatosNormal)pb.Parent.Parent;
+                    dnSelected.BackColor = System.Drawing.Color.Aquamarine;
+                } else
+                {
+                    dliSelected = (DatosListaImagen)pb.Parent.Parent;
+                    dliSelected.BackColor = System.Drawing.Color.Aquamarine;
+                }
+            }
+        }
+
+        private void panelFondo_Click(object sender, EventArgs e)
+        {
+            cleanBackgrounds();
+        }
+
+        private void showDataForm(byte new_edit)
+        {
+            DataForm frm;
+
+            if (new_edit == 1)
+            {
+                frm = new DataForm(this, new_edit, viewSelect);
+            } else
+            {                
+                if(viewSelect == 1)
+                {
+                    int index = panelFondo.Controls.IndexOf(dnSelected);
+                    frm = new DataForm(this, new_edit, index, dnSelected);
+                } else
+                {
+                    int index = panelFondo.Controls.IndexOf(dliSelected);
+                    frm = new DataForm(this, new_edit, index, dliSelected);
+                }
+            }
             frm.Show();
         }
 
@@ -91,27 +177,17 @@ namespace ProyectoDIAndres {
             ts2.Checked = false;
         }
 
-        public void getControlUser(object sender, EventArgs e) {
-
-
-            if(sender is Panel) {
-                Panel panel = (Panel)sender;
-                dnRemove = (DatosNormal)panel.Parent;
-                dnRemove.BackColor = System.Drawing.Color.Aquamarine;
-            } else if(sender is Label) {
-                Label lbl = (Label)sender;
-                dnRemove = (DatosNormal)lbl.Parent.Parent;
-                dnRemove.BackColor = System.Drawing.Color.Aquamarine;
-            } else if(sender is PictureBox) {
-                PictureBox pb = (PictureBox)sender;
-                dnRemove = (DatosNormal)pb.Parent.Parent;
-                dnRemove.BackColor = System.Drawing.Color.Aquamarine;
-            }
-        }
-
-        private void cmsRemove_Click(object sender, EventArgs e)
+        private void cleanBackgrounds()
         {
-            panelFondo.Controls.Remove(dnRemove);
+            if (dnSelected != null)
+            {
+                dnSelected.BackColor = System.Drawing.Color.Transparent;
+            }
+
+            if (dliSelected != null)
+            {
+                dliSelected.BackColor = System.Drawing.Color.Transparent;
+            }
         }
     }
 }

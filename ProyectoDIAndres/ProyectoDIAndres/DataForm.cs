@@ -9,15 +9,51 @@ namespace ProyectoDIAndres
     public partial class DataForm : Form
     {
 
-        String imgFile = null;
+        String imgFile = null, title = "";
         byte viewSelect;
         private Form1 frm1;
+        int idexReceived, new_editReceived;
+        DatosNormal dnReceived;
+        DatosListaImagen dliReceived;
 
-        public DataForm(Form1 frm1Send, byte viewSelectSend)
+        public DataForm(Form1 frm1Send, int new_editSend, byte viewSelectSend)
         {
             InitializeComponent();
             frm1 = frm1Send;
             viewSelect = viewSelectSend;
+            new_editReceived = new_editSend;
+        }
+
+        public DataForm(Form1 frm1Send, int new_editSend, int indexSend, DatosNormal dnSend)
+        {
+            InitializeComponent();
+            frm1 = frm1Send;
+            new_editReceived = new_editSend;
+            idexReceived = indexSend;
+            dnReceived = dnSend;
+
+            title = dliReceived.getTitle();
+            imgFile = dliReceived.getImageFile();
+
+            txtTitle.Text = title;
+            pbImage.Image = Bitmap.FromFile(imgFile);
+            lblDimens.Visible = false;
+        }
+
+        public DataForm(Form1 frm1Send, int new_editSend, int indexSend, DatosListaImagen dliSend)
+        {
+            InitializeComponent();
+            frm1 = frm1Send;
+            new_editReceived = new_editSend;
+            idexReceived = indexSend;
+            dliReceived = dliSend;
+
+            title = dliReceived.getTitle();
+            imgFile = dliReceived.getImageFile();
+
+            txtTitle.Text = title;
+            pbImage.Image = Bitmap.FromFile(imgFile);
+            lblDimens.Visible = false;
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)
@@ -26,7 +62,6 @@ namespace ProyectoDIAndres
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 imgFile = ofd.FileName;
-                pbImage.SizeMode = PictureBoxSizeMode.CenterImage;
                 pbImage.Image = Bitmap.FromFile(imgFile);
                 lblDimens.Visible = false;
             }
@@ -39,29 +74,73 @@ namespace ProyectoDIAndres
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            if (viewSelect == 1)
+            title = txtTitle.Text;
+            if (new_editReceived == 1)
             {
-                DatosNormal dn = new DatosNormal();
-                dn.setDatas(imgFile, txtTitle.Text);
+                if (viewSelect == 1)
+                {
+                    DatosNormal dn = new DatosNormal();
+                    dn.setDatas(imgFile, title);
 
-                dn.getPanelPb().Click += frm1.getControlUser;
-                dn.getPb().Click += frm1.getControlUser;
-                dn.getLbl().Click += frm1.getControlUser;
+                    dn.getPanelPb().Click += frm1.getControlUser;
+                    dn.getPb().Click += frm1.getControlUser;
+                    dn.getLbl().Click += frm1.getControlUser;
 
-                dn.getPanelPb().MouseUp += frm1.getControlUser;
-                dn.getPb().MouseUp += frm1.getControlUser;
-                dn.getLbl().MouseUp += frm1.getControlUser;
+                    dn.getPanelPb().MouseUp += frm1.getControlUser;
+                    dn.getPb().MouseUp += frm1.getControlUser;
+                    dn.getLbl().MouseUp += frm1.getControlUser;
 
-                frm1.panelFondo.Controls.Add(dn);
-            }
-            else if (viewSelect == 2)
+                    frm1.panelFondo.Controls.Add(dn);
+                }
+                else if (viewSelect == 2)
+                {
+                    DatosListaImagen dli = new DatosListaImagen();
+                    dli.setDatas(imgFile, title);
+
+                    dli.getPanelPb().Click += frm1.getControlUser;
+                    dli.getPb().Click += frm1.getControlUser;
+                    dli.getLbl().Click += frm1.getControlUser;
+
+                    dli.getPanelPb().MouseUp += frm1.getControlUser;
+                    dli.getPb().MouseUp += frm1.getControlUser;
+                    dli.getLbl().MouseUp += frm1.getControlUser;
+
+                    frm1.panelFondo.Controls.Add(dli);
+                }
+
+            } else
             {
-                DatosListaImagen dli = new DatosListaImagen();
-                dli.setDatas(imgFile, txtTitle.Text);
-                
-                frm1.panelFondo.Controls.Add(dli);
-            }
+                if (viewSelect == 1)
+                {
+                    DatosNormal dn = new DatosNormal();
+                    dn.setDatas(imgFile, title);
 
+                    dn.getPanelPb().Click += frm1.getControlUser;
+                    dn.getPb().Click += frm1.getControlUser;
+                    dn.getLbl().Click += frm1.getControlUser;
+
+                    dn.getPanelPb().MouseUp += frm1.getControlUser;
+                    dn.getPb().MouseUp += frm1.getControlUser;
+                    dn.getLbl().MouseUp += frm1.getControlUser;
+
+                    frm1.panelFondo.Controls.SetChildIndex(dn, in);
+                }
+                else if (viewSelect == 2)
+                {
+                    DatosListaImagen dli = new DatosListaImagen();
+                    dli.setDatas(imgFile, title);
+
+                    dli.getPanelPb().Click += frm1.getControlUser;
+                    dli.getPb().Click += frm1.getControlUser;
+                    dli.getLbl().Click += frm1.getControlUser;
+
+                    dli.getPanelPb().MouseUp += frm1.getControlUser;
+                    dli.getPb().MouseUp += frm1.getControlUser;
+                    dli.getLbl().MouseUp += frm1.getControlUser;
+
+                    frm1.panelFondo.Controls.Add(dli);
+                }
+            }
             panelFondoControles();
             this.Dispose();
         }
