@@ -7,35 +7,37 @@ namespace ProyectoDIAndres {
     public partial class Form1 : Form {
 
         public byte viewSelect;
-        private List<ControlDatos.DatosNormal> listaDn = new List<DatosNormal>();
-        private List<ControlDatos.DatosListaImagen> listaDli = new List<DatosListaImagen>();
+        private List<DatosNormal> listaDn;
+        private List<DatosListaImagen> listaDli;
         
         public Form1() {
             InitializeComponent();
+
+            viewSelect = 1;
+            listaDn = new List<DatosNormal>();
+            listaDli = new List<DatosListaImagen>();
         }
 
         private void miNew_Click(object sender, System.EventArgs e) {
             showDataForm();
         }
 
-        private void showDataForm() {
-            DataForm frm = new DataForm(this, viewSelect);
-            frm.Show();
+        private void miExit_Click(object sender, System.EventArgs e)
+        {
+            this.Close();
         }
 
-        private void miIcon_Click(object sender, System.EventArgs e) {
-            miIcon.Checked = true;
-            tsMiIcon.Checked = true;
-            miIconList.Checked = false;
-            tsMiIconList.Checked = false;
+        private void miIcon_Click(object sender, System.EventArgs e)
+        {
+            cambiarVista(miIcon, tsMiIcon, miIconList, tsMiIconList);
             viewSelect = 1;
 
             listaDn.Clear();
-            panelFondo.Controls.Clear();
             foreach (DatosListaImagen c in panelFondo.Controls)
             {
                 listaDli.Add(c);
             }
+            panelFondo.Controls.Clear();
 
             panelFondo.FlowDirection = FlowDirection.LeftToRight;
             foreach (DatosListaImagen c in listaDli)
@@ -47,23 +49,44 @@ namespace ProyectoDIAndres {
         }
 
         private void miIconList_Click(object sender, System.EventArgs e) {
-            miIcon.Checked = false;
-            tsMiIcon.Checked = false;
-            miIconList.Checked = true;
-            tsMiIconList.Checked = true;
+            cambiarVista(miIconList, tsMiIconList, miIcon, tsMiIcon);
             viewSelect = 2;
-            panelFondo.FlowDirection = FlowDirection.TopDown;
+            
+            listaDli.Clear();
+            foreach (DatosNormal c in panelFondo.Controls)
+            {
+                listaDn.Add(c);
+            }
+            panelFondo.Controls.Clear();
 
-            //listaDli.Clear();
-            //foreach (Control c in panelFondo.Controls)
-            //{
-            //    listaDn.Add((ControlDatos.DatosNormal)c);
-            //}
+            panelFondo.FlowDirection = FlowDirection.TopDown;
+            foreach (DatosNormal c in listaDn)
+            {
+                DatosListaImagen dli = new DatosListaImagen();
+                dli.setDatas(c.getImageFile(), c.getTitle());
+                panelFondo.Controls.Add(dli);
+            }
         }
 
-        private void exitToolStripMenuItem_Click(object sender, System.EventArgs e)
+        private void tsBtnDelAll_Click(object sender, System.EventArgs e)
         {
-            this.Close();
+            panelFondo.Controls.Clear();
+            listaDli.Clear();
+            listaDn.Clear();
+        }
+
+        private void showDataForm()
+        {
+            DataForm frm = new DataForm(this, viewSelect);
+            frm.Show();
+        }
+
+        private void cambiarVista(ToolStripMenuItem mi1, ToolStripMenuItem ts1, ToolStripMenuItem mi2, ToolStripMenuItem ts2)
+        {
+            mi1.Checked = true;
+            ts1.Checked = true;
+            mi2.Checked = false;
+            ts2.Checked = false;
         }
     }
 }

@@ -57,8 +57,8 @@
             this.editToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msPanel = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.removeAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmsNew = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmsRemoveAll = new System.Windows.Forms.ToolStripMenuItem();
             this.myTips = new System.Windows.Forms.ToolTip(this.components);
             this.miExit = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
@@ -78,7 +78,7 @@
             this.herlpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(708, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(728, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -162,7 +162,7 @@
             this.tsBtnView});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(708, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(728, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -189,6 +189,7 @@
             this.tsBtnDelAll.Name = "tsBtnDelAll";
             this.tsBtnDelAll.Size = new System.Drawing.Size(23, 22);
             this.tsBtnDelAll.Text = "toolStripButton1";
+            this.tsBtnDelAll.Click += new System.EventHandler(this.tsBtnDelAll_Click);
             // 
             // tsBtnDel
             // 
@@ -261,7 +262,7 @@
             this.panelFondo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelFondo.Location = new System.Drawing.Point(0, 49);
             this.panelFondo.Name = "panelFondo";
-            this.panelFondo.Size = new System.Drawing.Size(708, 436);
+            this.panelFondo.Size = new System.Drawing.Size(728, 444);
             this.panelFondo.TabIndex = 2;
             // 
             // msControls
@@ -287,40 +288,42 @@
             // msPanel
             // 
             this.msPanel.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newToolStripMenuItem,
-            this.removeAllToolStripMenuItem});
+            this.cmsNew,
+            this.cmsRemoveAll});
             this.msPanel.Name = "msPanel";
-            this.msPanel.Size = new System.Drawing.Size(135, 48);
+            this.msPanel.Size = new System.Drawing.Size(153, 70);
             // 
-            // newToolStripMenuItem
+            // cmsNew
             // 
-            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
-            this.newToolStripMenuItem.Text = "&New";
+            this.cmsNew.Name = "cmsNew";
+            this.cmsNew.Size = new System.Drawing.Size(152, 22);
+            this.cmsNew.Text = "&New";
+            this.cmsNew.Click += new System.EventHandler(this.miNew_Click);
             // 
-            // removeAllToolStripMenuItem
+            // cmsRemoveAll
             // 
-            this.removeAllToolStripMenuItem.Name = "removeAllToolStripMenuItem";
-            this.removeAllToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
-            this.removeAllToolStripMenuItem.Text = "&Remove All";
+            this.cmsRemoveAll.Name = "cmsRemoveAll";
+            this.cmsRemoveAll.Size = new System.Drawing.Size(152, 22);
+            this.cmsRemoveAll.Text = "&Remove All";
+            this.cmsRemoveAll.Click += new System.EventHandler(this.tsBtnDelAll_Click);
             // 
             // miExit
             // 
             this.miExit.Name = "miExit";
             this.miExit.Size = new System.Drawing.Size(152, 22);
             this.miExit.Text = "&Exit";
-            this.miExit.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            this.miExit.Click += new System.EventHandler(this.miExit_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(708, 485);
+            this.ClientSize = new System.Drawing.Size(728, 493);
             this.Controls.Add(this.panelFondo);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.MinimumSize = new System.Drawing.Size(724, 524);
+            this.MinimumSize = new System.Drawing.Size(742, 532);
             this.Name = "Form1";
             this.Text = "Form1";
             this.menuStrip1.ResumeLayout(false);
@@ -361,13 +364,13 @@
         public System.Windows.Forms.FlowLayoutPanel panelFondo;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ContextMenuStrip msPanel;
-        private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem removeAllToolStripMenuItem;
-        private System.Windows.Forms.ContextMenuStrip msControls;
+        private System.Windows.Forms.ToolStripMenuItem cmsNew;
+        private System.Windows.Forms.ToolStripMenuItem cmsRemoveAll;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem;
         private System.Windows.Forms.ToolTip myTips;
         private System.Windows.Forms.ToolStripMenuItem miExit;
+        public System.Windows.Forms.ContextMenuStrip msControls;
     }
 }
 
