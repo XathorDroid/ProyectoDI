@@ -81,116 +81,118 @@
             // 
             // menuStrip1
             // 
+            resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.miView,
             this.toolsToolStripMenuItem,
             this.miLanguage,
             this.herlpToolStripMenuItem});
-            resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Name = "menuStrip1";
+            this.myTips.SetToolTip(this.menuStrip1, resources.GetString("menuStrip1.ToolTip"));
             // 
             // fileToolStripMenuItem
             // 
+            resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.miNew,
             this.miSave,
             this.miLoad,
             this.miExit});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
             // 
             // miNew
             // 
-            this.miNew.Name = "miNew";
             resources.ApplyResources(this.miNew, "miNew");
+            this.miNew.Name = "miNew";
             this.miNew.Click += new System.EventHandler(this.miNew_Click);
             // 
             // miSave
             // 
-            this.miSave.Name = "miSave";
             resources.ApplyResources(this.miSave, "miSave");
+            this.miSave.Name = "miSave";
             // 
             // miLoad
             // 
-            this.miLoad.Name = "miLoad";
             resources.ApplyResources(this.miLoad, "miLoad");
+            this.miLoad.Name = "miLoad";
             // 
             // miExit
             // 
-            this.miExit.Name = "miExit";
             resources.ApplyResources(this.miExit, "miExit");
+            this.miExit.Name = "miExit";
             this.miExit.Click += new System.EventHandler(this.miExit_Click);
             // 
             // miView
             // 
+            resources.ApplyResources(this.miView, "miView");
             this.miView.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.miIcon,
             this.miIconList});
             this.miView.Name = "miView";
-            resources.ApplyResources(this.miView, "miView");
             // 
             // miIcon
             // 
+            resources.ApplyResources(this.miIcon, "miIcon");
             this.miIcon.Checked = true;
             this.miIcon.CheckState = System.Windows.Forms.CheckState.Checked;
             this.miIcon.Name = "miIcon";
-            resources.ApplyResources(this.miIcon, "miIcon");
             this.miIcon.Click += new System.EventHandler(this.miIcon_Click);
             // 
             // miIconList
             // 
-            this.miIconList.Name = "miIconList";
             resources.ApplyResources(this.miIconList, "miIconList");
+            this.miIconList.Name = "miIconList";
             this.miIconList.Click += new System.EventHandler(this.miIconList_Click);
             // 
             // toolsToolStripMenuItem
             // 
-            this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             resources.ApplyResources(this.toolsToolStripMenuItem, "toolsToolStripMenuItem");
+            this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             // 
             // miLanguage
             // 
+            resources.ApplyResources(this.miLanguage, "miLanguage");
             this.miLanguage.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.miEnglish,
             this.miSpain});
             this.miLanguage.Name = "miLanguage";
-            resources.ApplyResources(this.miLanguage, "miLanguage");
             // 
             // miEnglish
             // 
-            this.miEnglish.Name = "miEnglish";
             resources.ApplyResources(this.miEnglish, "miEnglish");
+            this.miEnglish.Name = "miEnglish";
             this.miEnglish.Click += new System.EventHandler(this.miEnglish_Click);
             // 
             // miSpain
             // 
-            this.miSpain.Name = "miSpain";
             resources.ApplyResources(this.miSpain, "miSpain");
+            this.miSpain.Name = "miSpain";
             this.miSpain.Click += new System.EventHandler(this.miSpain_Click);
             // 
             // herlpToolStripMenuItem
             // 
+            resources.ApplyResources(this.herlpToolStripMenuItem, "herlpToolStripMenuItem");
             this.herlpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.miAbout,
             this.miGitHub});
             this.herlpToolStripMenuItem.Name = "herlpToolStripMenuItem";
-            resources.ApplyResources(this.herlpToolStripMenuItem, "herlpToolStripMenuItem");
             // 
             // miAbout
             // 
-            this.miAbout.Name = "miAbout";
             resources.ApplyResources(this.miAbout, "miAbout");
+            this.miAbout.Name = "miAbout";
             this.miAbout.Click += new System.EventHandler(this.miAbout_Click);
             // 
             // miGitHub
             // 
-            this.miGitHub.Name = "miGitHub";
             resources.ApplyResources(this.miGitHub, "miGitHub");
+            this.miGitHub.Name = "miGitHub";
             this.miGitHub.Click += new System.EventHandler(this.miGitHub_Click);
             // 
             // toolStrip1
             // 
+            resources.ApplyResources(this.toolStrip1, "toolStrip1");
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsBtnNew,
@@ -208,169 +210,172 @@
             this.toolStripSeparator2,
             this.tsBtnView,
             this.toolStripSeparator6});
-            resources.ApplyResources(this.toolStrip1, "toolStrip1");
             this.toolStrip1.Name = "toolStrip1";
+            this.myTips.SetToolTip(this.toolStrip1, resources.GetString("toolStrip1.ToolTip"));
             // 
             // tsBtnNew
             // 
+            resources.ApplyResources(this.tsBtnNew, "tsBtnNew");
             this.tsBtnNew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tsBtnNew.Image = global::ProyectoDIAndres.Properties.Resources.plus_box_1_;
-            resources.ApplyResources(this.tsBtnNew, "tsBtnNew");
             this.tsBtnNew.Name = "tsBtnNew";
             this.tsBtnNew.Click += new System.EventHandler(this.miNew_Click);
             // 
             // toolStripSeparator3
             // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
             resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
             // 
             // tsBtnSave
             // 
+            resources.ApplyResources(this.tsBtnSave, "tsBtnSave");
             this.tsBtnSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tsBtnSave.Image = global::ProyectoDIAndres.Properties.Resources.content_save;
-            resources.ApplyResources(this.tsBtnSave, "tsBtnSave");
             this.tsBtnSave.Name = "tsBtnSave";
             // 
             // tsBtnLoad
             // 
+            resources.ApplyResources(this.tsBtnLoad, "tsBtnLoad");
             this.tsBtnLoad.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tsBtnLoad.Image = global::ProyectoDIAndres.Properties.Resources.download;
-            resources.ApplyResources(this.tsBtnLoad, "tsBtnLoad");
             this.tsBtnLoad.Name = "tsBtnLoad";
             // 
             // toolStripSeparator5
             // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
             resources.ApplyResources(this.toolStripSeparator5, "toolStripSeparator5");
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
             // 
             // tsBtnDelAll
             // 
+            resources.ApplyResources(this.tsBtnDelAll, "tsBtnDelAll");
             this.tsBtnDelAll.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tsBtnDelAll.Image = global::ProyectoDIAndres.Properties.Resources.delete_sweep;
-            resources.ApplyResources(this.tsBtnDelAll, "tsBtnDelAll");
             this.tsBtnDelAll.Name = "tsBtnDelAll";
             this.tsBtnDelAll.Click += new System.EventHandler(this.tsBtnDelAll_Click);
             // 
             // tsBtnDel
             // 
+            resources.ApplyResources(this.tsBtnDel, "tsBtnDel");
             this.tsBtnDel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tsBtnDel.Image = global::ProyectoDIAndres.Properties.Resources.delete;
-            resources.ApplyResources(this.tsBtnDel, "tsBtnDel");
             this.tsBtnDel.Name = "tsBtnDel";
             this.tsBtnDel.Click += new System.EventHandler(this.cmsRemove_Click);
             // 
             // toolStripSeparator4
             // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
             resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
             // 
             // tsBtnEdit
             // 
+            resources.ApplyResources(this.tsBtnEdit, "tsBtnEdit");
             this.tsBtnEdit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tsBtnEdit.Image = global::ProyectoDIAndres.Properties.Resources.lead_pencil;
-            resources.ApplyResources(this.tsBtnEdit, "tsBtnEdit");
             this.tsBtnEdit.Name = "tsBtnEdit";
             this.tsBtnEdit.Click += new System.EventHandler(this.tsBtnEdit_Click);
             // 
             // toolStripSeparator1
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
             resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
             // 
             // tsBtnUndo
             // 
+            resources.ApplyResources(this.tsBtnUndo, "tsBtnUndo");
             this.tsBtnUndo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tsBtnUndo.Image = global::ProyectoDIAndres.Properties.Resources.undo_variant;
-            resources.ApplyResources(this.tsBtnUndo, "tsBtnUndo");
             this.tsBtnUndo.Name = "tsBtnUndo";
             // 
             // tsBtnRedo
             // 
+            resources.ApplyResources(this.tsBtnRedo, "tsBtnRedo");
             this.tsBtnRedo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tsBtnRedo.Image = global::ProyectoDIAndres.Properties.Resources.redo_variant;
-            resources.ApplyResources(this.tsBtnRedo, "tsBtnRedo");
             this.tsBtnRedo.Name = "tsBtnRedo";
             // 
             // toolStripSeparator2
             // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
             resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
             // 
             // tsBtnView
             // 
+            resources.ApplyResources(this.tsBtnView, "tsBtnView");
             this.tsBtnView.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tsBtnView.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsMiIcon,
             this.tsMiIconList});
             this.tsBtnView.Image = global::ProyectoDIAndres.Properties.Resources.view_list;
-            resources.ApplyResources(this.tsBtnView, "tsBtnView");
             this.tsBtnView.Name = "tsBtnView";
             // 
             // tsMiIcon
             // 
+            resources.ApplyResources(this.tsMiIcon, "tsMiIcon");
             this.tsMiIcon.Checked = true;
             this.tsMiIcon.CheckState = System.Windows.Forms.CheckState.Checked;
             this.tsMiIcon.Name = "tsMiIcon";
-            resources.ApplyResources(this.tsMiIcon, "tsMiIcon");
             this.tsMiIcon.Click += new System.EventHandler(this.miIcon_Click);
             // 
             // tsMiIconList
             // 
-            this.tsMiIconList.Name = "tsMiIconList";
             resources.ApplyResources(this.tsMiIconList, "tsMiIconList");
+            this.tsMiIconList.Name = "tsMiIconList";
             this.tsMiIconList.Click += new System.EventHandler(this.miIconList_Click);
             // 
             // toolStripSeparator6
             // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
             resources.ApplyResources(this.toolStripSeparator6, "toolStripSeparator6");
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
             // 
             // panelFondo
             // 
+            resources.ApplyResources(this.panelFondo, "panelFondo");
             this.panelFondo.AllowDrop = true;
             this.panelFondo.ContextMenuStrip = this.msPanel;
-            resources.ApplyResources(this.panelFondo, "panelFondo");
             this.panelFondo.Name = "panelFondo";
+            this.myTips.SetToolTip(this.panelFondo, resources.GetString("panelFondo.ToolTip"));
             this.panelFondo.Click += new System.EventHandler(this.panelFondo_Click);
             // 
             // msPanel
             // 
+            resources.ApplyResources(this.msPanel, "msPanel");
             this.msPanel.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cmsNew,
             this.cmsRemoveAll});
             this.msPanel.Name = "msPanel";
-            resources.ApplyResources(this.msPanel, "msPanel");
+            this.myTips.SetToolTip(this.msPanel, resources.GetString("msPanel.ToolTip"));
             // 
             // cmsNew
             // 
-            this.cmsNew.Name = "cmsNew";
             resources.ApplyResources(this.cmsNew, "cmsNew");
+            this.cmsNew.Name = "cmsNew";
             this.cmsNew.Click += new System.EventHandler(this.miNew_Click);
             // 
             // cmsRemoveAll
             // 
-            this.cmsRemoveAll.Name = "cmsRemoveAll";
             resources.ApplyResources(this.cmsRemoveAll, "cmsRemoveAll");
+            this.cmsRemoveAll.Name = "cmsRemoveAll";
             this.cmsRemoveAll.Click += new System.EventHandler(this.tsBtnDelAll_Click);
             // 
             // msControls
             // 
+            resources.ApplyResources(this.msControls, "msControls");
             this.msControls.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.editToolStripMenuItem1,
             this.cmsRemove});
             this.msControls.Name = "msControls";
-            resources.ApplyResources(this.msControls, "msControls");
+            this.myTips.SetToolTip(this.msControls, resources.GetString("msControls.ToolTip"));
             // 
             // editToolStripMenuItem1
             // 
-            this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
             resources.ApplyResources(this.editToolStripMenuItem1, "editToolStripMenuItem1");
+            this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
             this.editToolStripMenuItem1.Click += new System.EventHandler(this.tsBtnEdit_Click);
             // 
             // cmsRemove
             // 
-            this.cmsRemove.Name = "cmsRemove";
             resources.ApplyResources(this.cmsRemove, "cmsRemove");
+            this.cmsRemove.Name = "cmsRemove";
             this.cmsRemove.Click += new System.EventHandler(this.cmsRemove_Click);
             // 
             // Form1
@@ -382,6 +387,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
+            this.myTips.SetToolTip(this, resources.GetString("$this.ToolTip"));
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);

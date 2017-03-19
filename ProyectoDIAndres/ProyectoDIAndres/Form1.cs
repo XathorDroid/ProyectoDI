@@ -108,7 +108,8 @@ namespace ProyectoDIAndres {
 
         private void miAbout_Click(object sender, EventArgs e)
         {
-
+            AboutForm af = new AboutForm(language);
+            af.ShowDialog();
         }
 
         private void miGitHub_Click(object sender, EventArgs e)
@@ -264,7 +265,8 @@ namespace ProyectoDIAndres {
                     frm = new DataForm(this, new_edit, viewSelect, index, dliSelected, language);
                 }
             }
-            frm.Show();
+            //frm.Show();
+            frm.ShowDialog();
         }
 
         private void cambiarVista(ToolStripMenuItem mi1, ToolStripMenuItem ts1, ToolStripMenuItem mi2, ToolStripMenuItem ts2)
