@@ -142,29 +142,32 @@
   <data name="toolsToolStripMenuItem.Text" xml:space="preserve">
     <value>Tools</value>
   </data>
-  <data name="helpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 20</value>
-  </data>
-  <data name="helpToolStripMenuItem.Text" xml:space="preserve">
-    <value>Window</value>
-  </data>
-  <data name="miAbout.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="miEnglish.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 22</value>
   </data>
-  <data name="miAbout.Text" xml:space="preserve">
-    <value>&amp;About</value>
+  <data name="miEnglish.Text" xml:space="preserve">
+    <value>English</value>
   </data>
-  <data name="miAbout.ToolTipText" xml:space="preserve">
-    <value>Information about the Program</value>
+  <data name="miEnglish.ToolTipText" xml:space="preserve">
+    <value>Set language to English</value>
   </data>
-  <data name="miGitHub.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="miSpain.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 22</value>
   </data>
-  <data name="miGitHub.Text" xml:space="preserve">
-    <value>My &amp;GitHub</value>
+  <data name="miSpain.Text" xml:space="preserve">
+    <value>Spain</value>
   </data>
-  <data name="miGitHub.ToolTipText" xml:space="preserve">
-    <value>Acces to my GitHub Repository</value>
+  <data name="miSpain.ToolTipText" xml:space="preserve">
+    <value>Set language to Spain</value>
+  </data>
+  <data name="miLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 20</value>
+  </data>
+  <data name="miLanguage.Text" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="miLanguage.ToolTipText" xml:space="preserve">
+    <value>Change the window language</value>
   </data>
   <data name="herlpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 20</value>
@@ -247,6 +250,24 @@
   </data>
   <data name="miIconList.ToolTipText" xml:space="preserve">
     <value>See your titles in a list view</value>
+  </data>
+  <data name="miAbout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 22</value>
+  </data>
+  <data name="miAbout.Text" xml:space="preserve">
+    <value>&amp;About</value>
+  </data>
+  <data name="miAbout.ToolTipText" xml:space="preserve">
+    <value>Information about the Program</value>
+  </data>
+  <data name="miGitHub.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 22</value>
+  </data>
+  <data name="miGitHub.Text" xml:space="preserve">
+    <value>My &amp;GitHub</value>
+  </data>
+  <data name="miGitHub.ToolTipText" xml:space="preserve">
+    <value>Acces to my GitHub Repository</value>
   </data>
   <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>132, 17</value>
@@ -573,10 +594,22 @@
   <data name="&gt;&gt;toolsToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;helpToolStripMenuItem.Name" xml:space="preserve">
-    <value>helpToolStripMenuItem</value>
+  <data name="&gt;&gt;miLanguage.Name" xml:space="preserve">
+    <value>miLanguage</value>
   </data>
-  <data name="&gt;&gt;helpToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;miLanguage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;miEnglish.Name" xml:space="preserve">
+    <value>miEnglish</value>
+  </data>
+  <data name="&gt;&gt;miEnglish.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;miSpain.Name" xml:space="preserve">
+    <value>miSpain</value>
+  </data>
+  <data name="&gt;&gt;miSpain.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;herlpToolStripMenuItem.Name" xml:space="preserve">

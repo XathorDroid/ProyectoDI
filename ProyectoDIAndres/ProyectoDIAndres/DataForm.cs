@@ -1,6 +1,8 @@
 ﻿using ControlDatos;
 using System;
 using System.Drawing;
+using System.Globalization;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace ProyectoDIAndres
@@ -17,16 +19,18 @@ namespace ProyectoDIAndres
         DatosNormal dnReceived;
         DatosListaImagen dliReceived;
 
-        public DataForm(Form1 frm1Send, int new_editSend, byte viewSelectSend)
+        public DataForm(Form1 frm1Send, int new_editSend, byte viewSelectSend, string language)
         {
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(language);
             InitializeComponent();
             frm1 = frm1Send;
             viewSelect = viewSelectSend;
             new_editReceived = new_editSend;
         }
 
-        public DataForm(Form1 frm1Send, int new_editSend, byte viewSelectSend, int indexSend, DatosNormal dnSend)
+        public DataForm(Form1 frm1Send, int new_editSend, byte viewSelectSend, int indexSend, DatosNormal dnSend, string language)
         {
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(language);
             InitializeComponent();
             frm1 = frm1Send;
             viewSelect = viewSelectSend;
@@ -44,8 +48,9 @@ namespace ProyectoDIAndres
             lblDimens.Visible = false;
         }
 
-        public DataForm(Form1 frm1Send, int new_editSend, byte viewSelectSend, int indexSend, DatosListaImagen dliSend)
+        public DataForm(Form1 frm1Send, int new_editSend, byte viewSelectSend, int indexSend, DatosListaImagen dliSend, string language)
         {
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(language);
             InitializeComponent();
             frm1 = frm1Send;
             viewSelect = viewSelectSend;
@@ -88,7 +93,7 @@ namespace ProyectoDIAndres
                 if (viewSelect == 1)
                 {
                     DatosNormal dn = new DatosNormal();
-                    dn.setDatas(imagen, title);
+                    dn.setDatas(imagen, title, imgFile);
 
                     dn.getPanelPb().Click += frm1.getControlUser;
                     dn.getPb().Click += frm1.getControlUser;
@@ -104,7 +109,7 @@ namespace ProyectoDIAndres
                 else if (viewSelect == 2)
                 {
                     DatosListaImagen dli = new DatosListaImagen();
-                    dli.setDatas(imagen, title);
+                    dli.setDatas(imagen, title, imgFile);
 
                     dli.getPanelPb().Click += frm1.getControlUser;
                     dli.getPb().Click += frm1.getControlUser;
@@ -123,7 +128,7 @@ namespace ProyectoDIAndres
                 if (viewSelect == 1)
                 {
                     DatosNormal dn = new DatosNormal();
-                    dn.setDatas(imagen, title);
+                    dn.setDatas(imagen, title, imgFile);
 
                     frm1.eventosDatosNormal(dn);
 
@@ -138,7 +143,7 @@ namespace ProyectoDIAndres
                 else if (viewSelect == 2)
                 {
                     DatosListaImagen dli = new DatosListaImagen();
-                    dli.setDatas(imagen, title);
+                    dli.setDatas(imagen, title, imgFile);
 
                     frm1.eventosDatosListaImagen(dli);
 

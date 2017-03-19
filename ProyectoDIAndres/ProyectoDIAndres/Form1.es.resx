@@ -136,11 +136,14 @@
   <data name="toolsToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Herramientas</value>
   </data>
-  <data name="helpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 20</value>
+  <data name="miLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 20</value>
   </data>
-  <data name="helpToolStripMenuItem.Text" xml:space="preserve">
-    <value>Ven&amp;tana</value>
+  <data name="miLanguage.Text" xml:space="preserve">
+    <value>Idioma</value>
+  </data>
+  <data name="miLanguage.ToolTipText" xml:space="preserve">
+    <value>Cambia el idioma de la ventana</value>
   </data>
   <data name="herlpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 20</value>
@@ -202,11 +205,29 @@
   <data name="miIconList.ToolTipText" xml:space="preserve">
     <value>Mira tus títulos en vista de lista</value>
   </data>
+  <data name="miEnglish.Text" xml:space="preserve">
+    <value>Inglés</value>
+  </data>
+  <data name="miEnglish.ToolTipText" xml:space="preserve">
+    <value>Cambia el idioma a inglés</value>
+  </data>
+  <data name="miSpain.Text" xml:space="preserve">
+    <value>Español</value>
+  </data>
+  <data name="miSpain.ToolTipText" xml:space="preserve">
+    <value>Cambia el idioma a español</value>
+  </data>
+  <data name="miAbout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 22</value>
+  </data>
   <data name="miAbout.Text" xml:space="preserve">
     <value>&amp;Acerca de...</value>
   </data>
   <data name="miAbout.ToolTipText" xml:space="preserve">
     <value>Información Acerca del Programa</value>
+  </data>
+  <data name="miGitHub.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 22</value>
   </data>
   <data name="miGitHub.Text" xml:space="preserve">
     <value>Mi &amp;GitHub</value>
@@ -235,14 +256,8 @@
   <data name="tsBtnView.ToolTipText" xml:space="preserve">
     <value>Cambia la vista</value>
   </data>
-  <data name="tsMiIcon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 22</value>
-  </data>
   <data name="tsMiIcon.ToolTipText" xml:space="preserve">
     <value>Mira tus títulos con iconos grandes</value>
-  </data>
-  <data name="tsMiIconList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 22</value>
   </data>
   <data name="tsMiIconList.ToolTipText" xml:space="preserve">
     <value>Mira tus títulos en vista de lista</value>
@@ -282,7 +297,7 @@
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Inherit</value>
+    <value>NoControl</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Colección de Títulos</value>
