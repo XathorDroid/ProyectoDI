@@ -96,7 +96,9 @@ namespace ProyectoDIAndres
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop, false);
             foreach(string file in files)
             {
-                pbImage.Image = Bitmap.FromFile(file);
+                imgFile = file;
+                imagen = Bitmap.FromFile(file);
+                pbImage.Image = imagen;
             }
             lblDimens.Visible = false;
         }
