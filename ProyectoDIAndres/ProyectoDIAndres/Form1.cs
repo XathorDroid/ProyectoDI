@@ -91,6 +91,17 @@ namespace ProyectoDIAndres {
             }
         }
 
+        private void miAbout_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void miGitHub_Click(object sender, EventArgs e)
+        {
+            string url = "https://github.com/XathorDroid/ProyectoDI/tree/ProyectoFinal/ProyectoDIAndres";
+            System.Diagnostics.Process.Start("IExplore", url);
+        }
+
         private void tsBtnDelAll_Click(object sender, System.EventArgs e)
         {
             panelFondo.Controls.Clear();
@@ -256,11 +267,6 @@ namespace ProyectoDIAndres {
             {
                 c.ContextMenuStrip = msControls;
             }
-        }
-
-        private void toolsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

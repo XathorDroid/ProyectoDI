@@ -121,6 +121,82 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 20</value>
+  </data>
+  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;File</value>
+  </data>
+  <data name="miView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 20</value>
+  </data>
+  <data name="miView.Text" xml:space="preserve">
+    <value>&amp;View</value>
+  </data>
+  <data name="miView.ToolTipText" xml:space="preserve">
+    <value>Change the view</value>
+  </data>
+  <data name="toolsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 20</value>
+  </data>
+  <data name="toolsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="helpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 20</value>
+  </data>
+  <data name="helpToolStripMenuItem.Text" xml:space="preserve">
+    <value>Window</value>
+  </data>
+  <data name="miAbout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="miAbout.Text" xml:space="preserve">
+    <value>&amp;About</value>
+  </data>
+  <data name="miAbout.ToolTipText" xml:space="preserve">
+    <value>Information about the Program</value>
+  </data>
+  <data name="miGitHub.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="miGitHub.Text" xml:space="preserve">
+    <value>My &amp;GitHub</value>
+  </data>
+  <data name="miGitHub.ToolTipText" xml:space="preserve">
+    <value>Acces to my GitHub Repository</value>
+  </data>
+  <data name="herlpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 20</value>
+  </data>
+  <data name="herlpToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Help</value>
+  </data>
+  <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>728, 24</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="menuStrip1.Text" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Name" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="miNew.Size" type="System.Drawing.Size, System.Drawing">
     <value>157, 22</value>
   </data>
@@ -154,12 +230,6 @@
   <data name="miExit.Text" xml:space="preserve">
     <value>&amp;Exit</value>
   </data>
-  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 20</value>
-  </data>
-  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;File</value>
-  </data>
   <data name="miIcon.Size" type="System.Drawing.Size, System.Drawing">
     <value>123, 22</value>
   </data>
@@ -178,70 +248,33 @@
   <data name="miIconList.ToolTipText" xml:space="preserve">
     <value>See your titles in a list view</value>
   </data>
-  <data name="miView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 20</value>
-  </data>
-  <data name="miView.Text" xml:space="preserve">
-    <value>&amp;View</value>
-  </data>
-  <data name="miView.ToolTipText" xml:space="preserve">
-    <value>Change the view</value>
-  </data>
-  <data name="toolsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 20</value>
-  </data>
-  <data name="toolsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Tools</value>
-  </data>
-  <data name="helpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 20</value>
-  </data>
-  <data name="helpToolStripMenuItem.Text" xml:space="preserve">
-    <value>Window</value>
-  </data>
-  <data name="aboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 22</value>
-  </data>
-  <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;About</value>
-  </data>
-  <data name="aboutToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Information about the Program</value>
-  </data>
-  <data name="herlpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 20</value>
-  </data>
-  <data name="herlpToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Help</value>
-  </data>
-  <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>728, 24</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="menuStrip1.Text" xml:space="preserve">
-    <value>menuStrip1</value>
-  </data>
-  <data name="&gt;&gt;menuStrip1.Name" xml:space="preserve">
-    <value>menuStrip1</value>
-  </data>
-  <data name="&gt;&gt;menuStrip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;menuStrip1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>132, 17</value>
   </metadata>
+  <data name="toolStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 24</value>
+  </data>
+  <data name="toolStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>728, 25</value>
+  </data>
+  <data name="toolStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="toolStrip1.Text" xml:space="preserve">
+    <value>toolStrip1</value>
+  </data>
+  <data name="&gt;&gt;toolStrip1.Name" xml:space="preserve">
+    <value>toolStrip1</value>
+  </data>
+  <data name="&gt;&gt;toolStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStrip1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;toolStrip1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="tsBtnNew.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
@@ -347,6 +380,18 @@
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 25</value>
   </data>
+  <data name="tsBtnView.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsBtnView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 22</value>
+  </data>
+  <data name="tsBtnView.Text" xml:space="preserve">
+    <value>toolStripSplitButton1</value>
+  </data>
+  <data name="tsBtnView.ToolTipText" xml:space="preserve">
+    <value>Change the view</value>
+  </data>
   <data name="tsMiIcon.Size" type="System.Drawing.Size, System.Drawing">
     <value>131, 22</value>
   </data>
@@ -365,44 +410,8 @@
   <data name="tsMiIconList.ToolTipText" xml:space="preserve">
     <value>See your titles in a list view</value>
   </data>
-  <data name="tsBtnView.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsBtnView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 22</value>
-  </data>
-  <data name="tsBtnView.Text" xml:space="preserve">
-    <value>toolStripSplitButton1</value>
-  </data>
-  <data name="tsBtnView.ToolTipText" xml:space="preserve">
-    <value>Change the view</value>
-  </data>
   <data name="toolStripSeparator6.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 25</value>
-  </data>
-  <data name="toolStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 24</value>
-  </data>
-  <data name="toolStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>728, 25</value>
-  </data>
-  <data name="toolStrip1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="toolStrip1.Text" xml:space="preserve">
-    <value>toolStrip1</value>
-  </data>
-  <data name="&gt;&gt;toolStrip1.Name" xml:space="preserve">
-    <value>toolStrip1</value>
-  </data>
-  <data name="&gt;&gt;toolStrip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStrip1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;toolStrip1.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <metadata name="backgroundWorker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>237, 17</value>
@@ -410,24 +419,6 @@
   <metadata name="msPanel.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>514, 17</value>
   </metadata>
-  <data name="cmsNew.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 22</value>
-  </data>
-  <data name="cmsNew.Text" xml:space="preserve">
-    <value>&amp;New</value>
-  </data>
-  <data name="cmsNew.ToolTipText" xml:space="preserve">
-    <value>Add a new Film, Book...</value>
-  </data>
-  <data name="cmsRemoveAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 22</value>
-  </data>
-  <data name="cmsRemoveAll.Text" xml:space="preserve">
-    <value>&amp;Remove All</value>
-  </data>
-  <data name="cmsRemoveAll.ToolTipText" xml:space="preserve">
-    <value>Clean all you collection</value>
-  </data>
   <data name="msPanel.Size" type="System.Drawing.Size, System.Drawing">
     <value>135, 48</value>
   </data>
@@ -462,9 +453,36 @@
   <data name="&gt;&gt;panelFondo.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="cmsNew.Size" type="System.Drawing.Size, System.Drawing">
+    <value>134, 22</value>
+  </data>
+  <data name="cmsNew.Text" xml:space="preserve">
+    <value>&amp;New</value>
+  </data>
+  <data name="cmsNew.ToolTipText" xml:space="preserve">
+    <value>Add a new Film, Book...</value>
+  </data>
+  <data name="cmsRemoveAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>134, 22</value>
+  </data>
+  <data name="cmsRemoveAll.Text" xml:space="preserve">
+    <value>&amp;Remove All</value>
+  </data>
+  <data name="cmsRemoveAll.ToolTipText" xml:space="preserve">
+    <value>Clean all you collection</value>
+  </data>
   <metadata name="msControls.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>401, 17</value>
   </metadata>
+  <data name="msControls.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 48</value>
+  </data>
+  <data name="&gt;&gt;msControls.Name" xml:space="preserve">
+    <value>msControls</value>
+  </data>
+  <data name="&gt;&gt;msControls.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="editToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>117, 22</value>
   </data>
@@ -483,15 +501,6 @@
   <data name="cmsRemove.ToolTipText" xml:space="preserve">
     <value>Remove the selected title</value>
   </data>
-  <data name="msControls.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 48</value>
-  </data>
-  <data name="&gt;&gt;msControls.Name" xml:space="preserve">
-    <value>msControls</value>
-  </data>
-  <data name="&gt;&gt;msControls.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <metadata name="myTips.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>611, 17</value>
   </metadata>
@@ -503,9 +512,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>728, 493</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>744, 532</value>
@@ -579,11 +585,23 @@
   <data name="&gt;&gt;herlpToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;aboutToolStripMenuItem.Name" xml:space="preserve">
-    <value>aboutToolStripMenuItem</value>
+  <data name="&gt;&gt;miAbout.Name" xml:space="preserve">
+    <value>miAbout</value>
   </data>
-  <data name="&gt;&gt;aboutToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;miAbout.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;miGitHub.Name" xml:space="preserve">
+    <value>miGitHub</value>
+  </data>
+  <data name="&gt;&gt;miGitHub.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsBtnNew.Name" xml:space="preserve">
+    <value>tsBtnNew</value>
+  </data>
+  <data name="&gt;&gt;tsBtnNew.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator3.Name" xml:space="preserve">
     <value>toolStripSeparator3</value>
@@ -591,11 +609,35 @@
   <data name="&gt;&gt;toolStripSeparator3.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;tsBtnSave.Name" xml:space="preserve">
+    <value>tsBtnSave</value>
+  </data>
+  <data name="&gt;&gt;tsBtnSave.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsBtnLoad.Name" xml:space="preserve">
+    <value>tsBtnLoad</value>
+  </data>
+  <data name="&gt;&gt;tsBtnLoad.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;toolStripSeparator5.Name" xml:space="preserve">
     <value>toolStripSeparator5</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator5.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsBtnDelAll.Name" xml:space="preserve">
+    <value>tsBtnDelAll</value>
+  </data>
+  <data name="&gt;&gt;tsBtnDelAll.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsBtnDel.Name" xml:space="preserve">
+    <value>tsBtnDel</value>
+  </data>
+  <data name="&gt;&gt;tsBtnDel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator4.Name" xml:space="preserve">
     <value>toolStripSeparator4</value>
@@ -603,17 +645,53 @@
   <data name="&gt;&gt;toolStripSeparator4.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;tsBtnEdit.Name" xml:space="preserve">
+    <value>tsBtnEdit</value>
+  </data>
+  <data name="&gt;&gt;tsBtnEdit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
     <value>toolStripSeparator1</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;tsBtnUndo.Name" xml:space="preserve">
+    <value>tsBtnUndo</value>
+  </data>
+  <data name="&gt;&gt;tsBtnUndo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsBtnRedo.Name" xml:space="preserve">
+    <value>tsBtnRedo</value>
+  </data>
+  <data name="&gt;&gt;tsBtnRedo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;toolStripSeparator2.Name" xml:space="preserve">
     <value>toolStripSeparator2</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator2.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsBtnView.Name" xml:space="preserve">
+    <value>tsBtnView</value>
+  </data>
+  <data name="&gt;&gt;tsBtnView.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSplitButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsMiIcon.Name" xml:space="preserve">
+    <value>tsMiIcon</value>
+  </data>
+  <data name="&gt;&gt;tsMiIcon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsMiIconList.Name" xml:space="preserve">
+    <value>tsMiIconList</value>
+  </data>
+  <data name="&gt;&gt;tsMiIconList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator6.Name" xml:space="preserve">
     <value>toolStripSeparator6</value>
@@ -656,72 +734,6 @@
   </data>
   <data name="&gt;&gt;myTips.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsBtnNew.Name" xml:space="preserve">
-    <value>tsBtnNew</value>
-  </data>
-  <data name="&gt;&gt;tsBtnNew.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsBtnSave.Name" xml:space="preserve">
-    <value>tsBtnSave</value>
-  </data>
-  <data name="&gt;&gt;tsBtnSave.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsBtnLoad.Name" xml:space="preserve">
-    <value>tsBtnLoad</value>
-  </data>
-  <data name="&gt;&gt;tsBtnLoad.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsBtnDelAll.Name" xml:space="preserve">
-    <value>tsBtnDelAll</value>
-  </data>
-  <data name="&gt;&gt;tsBtnDelAll.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsBtnDel.Name" xml:space="preserve">
-    <value>tsBtnDel</value>
-  </data>
-  <data name="&gt;&gt;tsBtnDel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsBtnEdit.Name" xml:space="preserve">
-    <value>tsBtnEdit</value>
-  </data>
-  <data name="&gt;&gt;tsBtnEdit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsBtnUndo.Name" xml:space="preserve">
-    <value>tsBtnUndo</value>
-  </data>
-  <data name="&gt;&gt;tsBtnUndo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsBtnRedo.Name" xml:space="preserve">
-    <value>tsBtnRedo</value>
-  </data>
-  <data name="&gt;&gt;tsBtnRedo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsBtnView.Name" xml:space="preserve">
-    <value>tsBtnView</value>
-  </data>
-  <data name="&gt;&gt;tsBtnView.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSplitButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsMiIcon.Name" xml:space="preserve">
-    <value>tsMiIcon</value>
-  </data>
-  <data name="&gt;&gt;tsMiIcon.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsMiIconList.Name" xml:space="preserve">
-    <value>tsMiIconList</value>
-  </data>
-  <data name="&gt;&gt;tsMiIconList.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Form1</value>
