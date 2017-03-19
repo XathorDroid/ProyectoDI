@@ -11,7 +11,7 @@ namespace ProyectoDIAndres
     public partial class DataForm : Form
     {
 
-        String imgFile = null, title = "";
+        string imgFile = null, title = "";
         Image imagen = null;
         byte viewSelect;
         private Form1 frm1;
@@ -26,6 +26,8 @@ namespace ProyectoDIAndres
             frm1 = frm1Send;
             viewSelect = viewSelectSend;
             new_editReceived = new_editSend;
+
+            pbImage.AllowDrop = true;
         }
 
         public DataForm(Form1 frm1Send, int new_editSend, byte viewSelectSend, int indexSend, DatosNormal dnSend, string language)
@@ -39,13 +41,15 @@ namespace ProyectoDIAndres
             dnReceived = dnSend;
 
             title = dnReceived.getTitle();
-            //imgFile = dnReceived.getImageFile();
+            imgFile = dnReceived.getImageFile();
             imagen = dnReceived.getImage();
 
             txtTitle.Text = title;
             //pbImage.Image = Bitmap.FromFile(imgFile);
             pbImage.Image = imagen;
             lblDimens.Visible = false;
+
+            pbImage.AllowDrop = true;
         }
 
         public DataForm(Form1 frm1Send, int new_editSend, byte viewSelectSend, int indexSend, DatosListaImagen dliSend, string language)
@@ -59,13 +63,15 @@ namespace ProyectoDIAndres
             dliReceived = dliSend;
 
             title = dliReceived.getTitle();
-            //imgFile = dliReceived.getImageFile();
+            imgFile = dliReceived.getImageFile();
             imagen = dliReceived.getImage();
 
             txtTitle.Text = title;
             //pbImage.Image = Bitmap.FromFile(imgFile);
             pbImage.Image = imagen;
             lblDimens.Visible = false;
+
+            pbImage.AllowDrop = true;
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)
@@ -78,6 +84,21 @@ namespace ProyectoDIAndres
                 pbImage.Image = imagen;
                 lblDimens.Visible = false;
             }
+        }
+
+        private void pbImage_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.All;
+        }
+
+        private void pbImage_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop, false);
+            foreach(string file in files)
+            {
+                pbImage.Image = Bitmap.FromFile(file);
+            }
+            lblDimens.Visible = false;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

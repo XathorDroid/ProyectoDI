@@ -48,7 +48,6 @@
             // 
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.myTips.SetToolTip(this.label1, resources.GetString("label1.ToolTip"));
             // 
             // txtTitle
             // 
@@ -60,12 +59,11 @@
             // 
             resources.ApplyResources(this.lblImage, "lblImage");
             this.lblImage.Name = "lblImage";
-            this.myTips.SetToolTip(this.lblImage, resources.GetString("lblImage.ToolTip"));
             // 
             // btnBrowse
             // 
-            resources.ApplyResources(this.btnBrowse, "btnBrowse");
             this.btnBrowse.Cursor = System.Windows.Forms.Cursors.Default;
+            resources.ApplyResources(this.btnBrowse, "btnBrowse");
             this.btnBrowse.Name = "btnBrowse";
             this.myTips.SetToolTip(this.btnBrowse, resources.GetString("btnBrowse.ToolTip"));
             this.btnBrowse.UseVisualStyleBackColor = true;
@@ -77,7 +75,6 @@
             this.panel1.Controls.Add(this.btnCancel);
             this.panel1.Controls.Add(this.btnOk);
             this.panel1.Name = "panel1";
-            this.myTips.SetToolTip(this.panel1, resources.GetString("panel1.ToolTip"));
             // 
             // btnCancel
             // 
@@ -99,15 +96,17 @@
             // 
             resources.ApplyResources(this.lblDimens, "lblDimens");
             this.lblDimens.Name = "lblDimens";
-            this.myTips.SetToolTip(this.lblDimens, resources.GetString("lblDimens.ToolTip"));
+            this.lblDimens.DragDrop += new System.Windows.Forms.DragEventHandler(this.pbImage_DragDrop);
+            this.lblDimens.DragEnter += new System.Windows.Forms.DragEventHandler(this.pbImage_DragEnter);
             // 
             // pbImage
             // 
-            resources.ApplyResources(this.pbImage, "pbImage");
             this.pbImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.pbImage, "pbImage");
             this.pbImage.Name = "pbImage";
             this.pbImage.TabStop = false;
-            this.myTips.SetToolTip(this.pbImage, resources.GetString("pbImage.ToolTip"));
+            this.pbImage.DragDrop += new System.Windows.Forms.DragEventHandler(this.pbImage_DragDrop);
+            this.pbImage.DragEnter += new System.Windows.Forms.DragEventHandler(this.pbImage_DragEnter);
             // 
             // DataForm
             // 
@@ -123,7 +122,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "DataForm";
-            this.myTips.SetToolTip(this, resources.GetString("$this.ToolTip"));
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).EndInit();
             this.ResumeLayout(false);
